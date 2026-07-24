@@ -1,0 +1,112 @@
+openapi: 3.0.3
+info:
+  title: OnDemand AI Chat Config API
+  version: 1.0.0
+  description: OnDemand AI is a RAG-powered AI Platform-as-a-Service. This OpenAPI definition was assembled by the API Evangelist enrichment pipeline from the per-operation OpenAPI fragments published on the OnDemand AI ReadMe documentation (https://docs.on-demand.io/reference).
+servers:
+- url: https://api.on-demand.io
+- url: https://api.on-demand.io/automation/api
+- url: https://api.on-demand.io/services/v1/public/service
+- url: https://gateway-dev.on-demand.io
+security:
+- apikey: []
+tags:
+- name: Config
+paths:
+  /config/v1/public/mqtt_user:
+    post:
+      summary: Create a new MQTT user
+      operationId: createMqttUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  description: The type of the MQTT user (e.g., 'admin')
+                  example: admin
+              required:
+              - type
+      responses:
+        '200':
+          description: MQTT user created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    description: Success message
+                    example: MqttUser Created Successfully
+                  password:
+                    type: string
+                    description: The password for the created MQTT user
+                    example: securepassword123
+        '400':
+          description: Invalid request or user already exists
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+                    example: Invalid payload or user already exists
+        '401':
+          description: Unauthorized access
+        '500':
+          description: Server error
+      security:
+      - ApiKeyAuth: []
+      tags:
+      - Config
+  /config/v1/public/mqtt_user/{userId}:
+    delete:
+      summary: Delete an MQTT user
+      operationId: deleteMqttUser
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the MQTT user to delete
+      responses:
+        '200':
+          description: MQTT user deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    description: Success message
+                    example: MqttUser Deleted Successfully
+        '400':
+          description: Invalid request
+        '401':
+          description: Unauthorized access
+        '404':
+          description: MQTT user not found
+        '500':
+          description: Server error
+      security:
+      - ApiKeyAuth: []
+      tags:
+      - Config
+components:
+  securitySchemes:
+    apikey:
+      type: apiKey
+      in: header
+      name: apikey
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: apikey

@@ -1,0 +1,163 @@
+openapi: 3.0.3
+info:
+  title: OnDemand AI Chat User API
+  version: 1.0.0
+  description: OnDemand AI is a RAG-powered AI Platform-as-a-Service. This OpenAPI definition was assembled by the API Evangelist enrichment pipeline from the per-operation OpenAPI fragments published on the OnDemand AI ReadMe documentation (https://docs.on-demand.io/reference).
+servers:
+- url: https://api.on-demand.io
+- url: https://api.on-demand.io/automation/api
+- url: https://api.on-demand.io/services/v1/public/service
+- url: https://gateway-dev.on-demand.io
+security:
+- apikey: []
+tags:
+- name: User
+paths:
+  /user/v1/public/user/apiKey/create:
+    post:
+      summary: Generate a REST API key
+      operationId: generateApiKey
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                key:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      description: Name or purpose of the API key
+                      example: For dev env testing
+                  required:
+                  - name
+              required:
+              - key
+      responses:
+        '200':
+          description: API key generated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      key:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                            description: Unique identifier for the API key
+                            example: 66074509feq77890dg27d1d7
+                          name:
+                            type: string
+                            description: Name of the API key
+                            example: For Local dev
+                          companyId:
+                            type: string
+                            description: Company ID associated with the API key
+                            example: 66054042a919189hsde63d40
+                          key:
+                            type: string
+                            description: The generated API key
+                            example: btvIWWWnsLug18wb1ZTASRyVxn8ssNPLL
+                          status:
+                            type: string
+                            description: Status of the API key
+                            example: active
+                          last_used:
+                            type: string
+                            format: date-time
+                            description: Last used timestamp of the API key
+                            example: '0001-01-01T00:00:00Z'
+                          created_at:
+                            type: string
+                            format: date-time
+                            description: Timestamp when the API key was created
+                            example: '2024-03-28T15:53:05+05:30'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Invalid request message
+                    example: Invalid request
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Unauthorized message
+                    example: Unauthorized
+        '500':
+          description: Server error
+      security:
+      - ApiKeyAuth: []
+      tags:
+      - User
+  /user/v1/public/user/apiKey/revoke/{apiKeyId}:
+    delete:
+      summary: Delete a REST API key
+      operationId: deleteApiKey
+      parameters:
+      - name: apiKeyId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the API key to delete
+      responses:
+        '200':
+          description: API key revoked successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Success message
+                    example: API key revoked successfully
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Bad request message
+                    example: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: API key not found
+        '500':
+          description: Server error
+      security:
+      - ApiKeyAuth: []
+      tags:
+      - User
+components:
+  securitySchemes:
+    apikey:
+      type: apiKey
+      in: header
+      name: apikey
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: apikey

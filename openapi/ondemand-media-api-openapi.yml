@@ -1,0 +1,431 @@
+openapi: 3.0.3
+info:
+  title: OnDemand AI Chat Media API
+  version: 1.0.0
+  description: OnDemand AI is a RAG-powered AI Platform-as-a-Service. This OpenAPI definition was assembled by the API Evangelist enrichment pipeline from the per-operation OpenAPI fragments published on the OnDemand AI ReadMe documentation (https://docs.on-demand.io/reference).
+servers:
+- url: https://api.on-demand.io
+- url: https://api.on-demand.io/automation/api
+- url: https://api.on-demand.io/services/v1/public/service
+- url: https://gateway-dev.on-demand.io
+security:
+- apikey: []
+tags:
+- name: Media
+paths:
+  /media/v1/public/file:
+    get:
+      summary: Fetch Media
+      description: Fetches media files with sorting, pagination and filters
+      operationId: fetchMedia
+      parameters:
+      - name: sort
+        in: query
+        required: false
+        description: 'Sorting order of media files. Users can choose to sort the media files based on two options: createdAt and updatedAt. Add a "-" sign before these parameters to sort media files in descending order.'
+        schema:
+          type: string
+          example: updatedAt
+          default: -createdAt
+      - name: page
+        in: query
+        required: false
+        description: Page number for pagination
+        schema:
+          type: integer
+          example: 4
+          default: 1
+      - name: limit
+        in: query
+        required: false
+        description: Number of items per page
+        schema:
+          type: integer
+          example: 10
+          default: 1
+      - name: plugins
+        in: query
+        required: false
+        description: Filter to retrieve specific media corresponding to specific pluginId
+        schema:
+          type: string
+          example: plugin-1713961903
+      - name: externalUserId
+        in: query
+        required: false
+        description: Filter to retrieve media corresponding to specific externalUserId
+        schema:
+          type: string
+          example: 53b1c579bdf3de74f76bdac9
+      - name: source
+        in: query
+        required: false
+        description: Filter to retrieve media of a specific type
+        schema:
+          type: string
+          enum:
+          - document
+          - audio
+          - video
+          - youtube
+          - image
+          example: document
+      responses:
+        '200':
+          description: Media fetched successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Media fetched successfully
+                    description: Response message indicating the result of the fetch operation
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: 668003840c07ddab21bdacea
+                          description: ID of the media file
+                        companyId:
+                          type: string
+                          example: 662cd783b00c6f8f6eb110d5
+                          description: Company ID of the user that owns the media file
+                        sessionId:
+                          type: string
+                          example: 6633e8d91433b0186f85c9d8
+                          description: ID of the session in which the media file was uploaded
+                        url:
+                          type: string
+                          format: uri
+                          example: https://res.cloudinary.com/shisheo/image/upload/v1719665541/1d6ed49b-b2eb-4fba-b019-9e8a23076556.pdf.pdf
+                          description: URL of the media file
+                        sourceUrl:
+                          type: string
+                          format: uri
+                          example: https://res.cloudinary.com/dbbqfdikp/image/upload/v1712401452/hrhjyqyo0injma4ppupb.pdf
+                          description: Original source URL of the media file
+                        name:
+                          type: string
+                          example: TESTING_DOC_01
+                          description: Name of the media file
+                        source:
+                          type: string
+                          example: document
+                          description: Source type of the media file
+                        mimeType:
+                          type: string
+                          example: application/pdf
+                          description: MIME type of the media file
+                        extension:
+                          type: string
+                          example: pdf
+                          description: File extension of the media file
+                        plugins:
+                          type: array
+                          items:
+                            type: string
+                            example: plugin-1713954536
+                            description: ID of a plugin associated with the media file
+                          description: List of plugins associated with the media file
+                        actionStatus:
+                          type: string
+                          example: processing
+                          description: Status of the media file
+                        isDeleted:
+                          type: boolean
+                          example: false
+                          description: Indicates if the media file is deleted
+                        responseMode:
+                          type: string
+                          example: sync
+                          description: Mode in which the response was received
+                        transcriptionHours:
+                          type: number
+                          example: 0.154
+                          description: Length of audio content of media in hours
+                        externalUserId:
+                          type: string
+                          example: 662cd783b00c6f8f6eb110d5
+                          description: External User ID of the user that owns the media file
+                        createdBy:
+                          type: string
+                          example: Peeyush Mishra
+                          description: ID of the user who created the media file
+                        updatedBy:
+                          type: string
+                          example: Peeyush Mishra
+                          description: ID of the user who last updated the media file
+                    description: List of media files fetched
+                  pagination:
+                    type: object
+                    properties:
+                      page:
+                        type: integer
+                        example: 1
+                        description: Current page number
+                      limit:
+                        type: integer
+                        example: 1
+                        description: Limit of items per page
+                    description: Pagination details
+      security:
+      - apikey: []
+      tags:
+      - Media
+    post:
+      description: used to create new media from URLs of document, audio, video, youtube, image
+      summary: Create Media URL
+      operationId: createMediaURL
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                createdBy:
+                  type: string
+                  example: Peeyush Mishra
+                  description: Name of the creator who creates media
+                updatedBy:
+                  type: string
+                  example: Peeyush Mishra
+                  description: Name of the creator who updates media
+                sessionId:
+                  type: string
+                  example: 6633e8d91433b0186f85c9d8
+                  description: Id of the session in which the user uploads their media file
+                externalUserId:
+                  type: string
+                  example: 867ee8d97393b0156f85c4s9
+                  description: external User ID of the user who uploads their media file
+                url:
+                  type: string
+                  format: uri
+                  example: https://res.cloudinary.com/dbbqfdikp/image/upload/v1712401452/hrhjyqyo0injma4ppupb.pdf
+                  description: url which contains the media data
+                name:
+                  type: string
+                  example: TESTING_DOC_01
+                  description: name of the media uploaded by user
+                plugins:
+                  type: array
+                  items:
+                    type: string
+                    example: plugin-1713954536
+                  description: Plugin Ids required for processing of media that is uploaded by user
+                sizeBytes:
+                  type: integer
+                  example: 7834093
+                  description: size in bytes of the media uploaded by user
+                responseMode:
+                  type: string
+                  enum:
+                  - sync
+                  - webhook
+                  example: sync
+                  description: Mode in which the user decides to recieve the responses from media
+                pluginInputs:
+                  type: array
+                  description: Inputs passed for plugins for specific functionalities like uploading media in a knowledge plugin
+                  items:
+                    type: object
+                    additionalProperties:
+                      description: This will hold the pluginId of global knowlede ingest plugin:- plugin-1716472791
+                      type: object
+                      properties:
+                        postProcess:
+                          type: object
+                          description: postProcess keyword describes that this knowledge ingestion will happen during postprocessing of plugin
+                          properties:
+                            chatPluginId:
+                              type: string
+                              description: PluginId of the knowledge plugin in which the media file is uploaded
+                              example: plugin-998877
+              required:
+              - url
+              - plugins
+              - responseMode
+      responses:
+        '200':
+          description: Media created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Media Created
+                    description: successful media creation response message
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: 668003840c07ddab21bdacea
+                        description: Id of media created
+                      companyId:
+                        type: string
+                        example: 662cd783b00c6f8f6eb110d5
+                        description: Company Id of the user that created the media
+                      sessionId:
+                        type: string
+                        example: 6633e8d91433b0186f85c9d8
+                        description: Id of the session in which the user uploads their media file
+                      externalUserId:
+                        type: string
+                        example: 662cd783b00c6f8f6eb110d5
+                        description: External User ID of the user that owns the media file
+                      url:
+                        type: string
+                        format: uri
+                        example: https://res.cloudinary.com/shisheo/image/upload/v1719665541/1d6ed49b-b2eb-4fba-b019-9e8a23076556.pdf.pdf
+                        description: url which contains the media data
+                      sourceUrl:
+                        type: string
+                        format: uri
+                        example: https://res.cloudinary.com/dbbqfdikp/image/upload/v1712401452/hrhjyqyo0injma4ppupb.pdf
+                        description: original url of source which contains the media data
+                      extractedTextUrl:
+                        type: string
+                        format: uri
+                        example: https://res.cloudinary.com/shisheo/raw/upload/v1719665543/mdzd6smbv8ladba948k3.txt
+                        description: url which contains the extracted text
+                      name:
+                        type: string
+                        example: TESTING_DOC_01
+                        description: name of the media uploaded by user
+                      sizeBytes:
+                        type: integer
+                        example: 7834093
+                        description: size in bytes of the media uploaded by user
+                      source:
+                        type: string
+                        example: document
+                        description: source of media file
+                      mimeType:
+                        type: string
+                        example: application/pdf
+                        description: mime type of the media uploaded by user
+                      extension:
+                        type: string
+                        example: pdf
+                        description: extension of media uploaded by user
+                      plugins:
+                        type: array
+                        description: Plugin Ids required for processing of media that is uploaded by user
+                        items:
+                          type: string
+                          example: plugin-1713954536
+                      context:
+                        type: string
+                        example: The conversation takes place between two individuals, John and Yumi. They are discussing the hot weather and the start of summer. John mentions that he is from London, where it rains a lot, and Yumi reveals that she is from Hokkaido, Japan, where it is colder even in the summer. They talk about their respective hometowns' weather and how they spend their summers. Yumi mentions taking her dog to the beach, while John talks about picnics in the park. They also discuss their interests, with Yumi expressing a desire to visit museums in London, and John mentioning the popularity of football games in his hometown.
+                        description: context or transcript of the media content
+                      extractedText:
+                        type: string
+                        nullable: true
+                        example: null
+                        description: extracted text from the media, if applicable
+                      actionStatus:
+                        type: string
+                        example: completed
+                        description: status of any actions performed on the media
+                      failedReason:
+                        type: string
+                        nullable: true
+                        example: null
+                        description: reason for failure, if any
+                      isDeleted:
+                        type: boolean
+                        example: false
+                        description: indicates if the media is deleted
+                      responseMode:
+                        type: string
+                        example: sync
+                        description: mode in which the response was received
+                      createdBy:
+                        type: string
+                        example: Peeyush Mishra
+                        description: Name of the user who created the media
+                      updatedBy:
+                        type: string
+                        example: Peeyush Mishra
+                        description: Name of the user who last updated the media
+                      pluginInputs:
+                        type: array
+                        description: Inputs passed for plugins for specific functionalities
+                        items:
+                          type: object
+                          additionalProperties:
+                            type: object
+                            properties:
+                              postProcess:
+                                type: object
+                                properties:
+                                  chatPluginId:
+                                    type: string
+                                    example: plugin-998877
+                                    description: Id of the chat plugin used for post-processing
+                      transcriptionHours:
+                        type: integer
+                        example: 0.008055555555555555
+                        description: Length of audio content of media in hours
+                      createdAt:
+                        type: string
+                        format: date-time
+                        example: '2024-06-29T12:52:21.398Z'
+                        description: timestamp of when the media was created
+                      updatedAt:
+                        type: string
+                        format: date-time
+                        example: '2024-06-29T12:52:28.258Z'
+                        description: timestamp of when the media was last updated
+      security:
+      - apikey: []
+      tags:
+      - Media
+  /media/v1/public/file/{fileId}:
+    delete:
+      summary: Delete Media
+      description: Deletes a media file by its ID
+      operationId: deleteMedia
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: 662929e2d55e95c7b27b8c58
+        description: ID of the media file to be deleted
+      responses:
+        '200':
+          description: Media Deleted!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Media Deleted!
+                    description: Response message indicating the result of the delete operation
+      security:
+      - apikey: []
+      tags:
+      - Media
+components:
+  securitySchemes:
+    apikey:
+      type: apiKey
+      in: header
+      name: apikey
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: apikey

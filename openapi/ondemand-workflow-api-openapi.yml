@@ -1,0 +1,220 @@
+openapi: 3.0.3
+info:
+  title: OnDemand AI Chat Workflow API
+  version: 1.0.0
+  description: OnDemand AI is a RAG-powered AI Platform-as-a-Service. This OpenAPI definition was assembled by the API Evangelist enrichment pipeline from the per-operation OpenAPI fragments published on the OnDemand AI ReadMe documentation (https://docs.on-demand.io/reference).
+servers:
+- url: https://api.on-demand.io
+- url: https://api.on-demand.io/automation/api
+- url: https://api.on-demand.io/services/v1/public/service
+- url: https://gateway-dev.on-demand.io
+security:
+- apikey: []
+tags:
+- name: Workflow
+paths:
+  /workflow:
+    post:
+      summary: Create workflow
+      operationId: createWorkflow
+      parameters:
+      - name: X-USER-ID
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: X-COMPANY-ID
+        in: header
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateWorkflowRequest'
+      responses:
+        '200':
+          description: Workflow created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkflowResponse'
+        '500':
+          description: Server error
+      tags:
+      - Workflow
+  /workflow/{id}:
+    patch:
+      summary: Update workflow
+      operationId: updateWorkflow
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Workflow ID
+      - name: X-USER-ID
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: X-COMPANY-ID
+        in: header
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateWorkflowRequest'
+      responses:
+        '200':
+          description: Workflow updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkflowResponse'
+        '404':
+          description: Workflow not found
+        '500':
+          description: Server error
+      security:
+      - ApiKeyAuth: []
+      tags:
+      - Workflow
+components:
+  schemas:
+    WorkflowResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        isActive:
+          type: boolean
+        enableMemory:
+          type: boolean
+    Measured:
+      type: object
+      properties:
+        width:
+          type: integer
+        height:
+          type: integer
+    CreateWorkflowRequest:
+      type: object
+      required:
+      - name
+      - trigger
+      - nodes
+      - delivery
+      properties:
+        name:
+          type: string
+        trigger:
+          $ref: '#/components/schemas/Trigger'
+        nodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Node'
+        delivery:
+          type: array
+          items:
+            $ref: '#/components/schemas/Delivery'
+        enableMemory:
+          type: boolean
+    Trigger:
+      type: object
+      required:
+      - type
+      - position
+      properties:
+        type:
+          type: string
+          enum:
+          - api
+          - cron
+          - webhook
+        position:
+          $ref: '#/components/schemas/NodePosition'
+        measured:
+          $ref: '#/components/schemas/Measured'
+        nextNodeKeys:
+          type: array
+          items:
+            type: string
+    Node:
+      type: object
+      required:
+      - key
+      - type
+      - kind
+      properties:
+        key:
+          type: string
+        type:
+          type: string
+          enum:
+          - llm
+          - inputText
+          - advancedVoiceMode
+          - o_analyzer
+        kind:
+          type: string
+          enum:
+          - source
+          - intermediate
+          - sink
+    UpdateWorkflowRequest:
+      type: object
+      required:
+      - trigger
+      - nodes
+      - delivery
+      properties:
+        name:
+          type: string
+          description: Workflow name
+        trigger:
+          $ref: '#/components/schemas/Trigger'
+        nodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Node'
+        delivery:
+          type: array
+          items:
+            $ref: '#/components/schemas/Delivery'
+        enableMemory:
+          type: boolean
+    Delivery:
+      type: object
+      properties:
+        channel:
+          type: string
+          enum:
+          - webhook
+          - phone
+          - email
+    NodePosition:
+      type: object
+      properties:
+        x:
+          type: integer
+        y:
+          type: integer
+  securitySchemes:
+    apikey:
+      type: apiKey
+      in: header
+      name: apikey
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: apikey

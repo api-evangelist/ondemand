@@ -1,0 +1,285 @@
+openapi: 3.0.3
+info:
+  title: OnDemand AI Chat Execute API
+  version: 1.0.0
+  description: OnDemand AI is a RAG-powered AI Platform-as-a-Service. This OpenAPI definition was assembled by the API Evangelist enrichment pipeline from the per-operation OpenAPI fragments published on the OnDemand AI ReadMe documentation (https://docs.on-demand.io/reference).
+servers:
+- url: https://api.on-demand.io
+- url: https://api.on-demand.io/automation/api
+- url: https://api.on-demand.io/services/v1/public/service
+- url: https://gateway-dev.on-demand.io
+security:
+- apikey: []
+tags:
+- name: Execute
+paths:
+  /execute/speech_to_text:
+    post:
+      summary: Convert audio to text
+      operationId: convertAudioToText
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - audioUrl
+              properties:
+                audioUrl:
+                  type: string
+                  description: The URL of the audio file
+      responses:
+        '200':
+          description: It returns the converted text
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Service execution message
+                  data:
+                    type: object
+                    properties:
+                      text:
+                        type: string
+                        description: The converted text
+                example:
+                  message: Service executed successfully
+                  data:
+                    text: On-demand is the best platform to build gen-ai products
+        '400':
+          description: 'Invalid Request: Not subscribed to the service'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message
+                  errorCode:
+                    type: string
+                    description: Error code indicating the issue
+                example:
+                  message: Please subscribe to the service to use it
+                  errorCode: invalid_request
+        '401':
+          description: 'Unauthorized: Incorrect API key'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message
+                  request_id:
+                    type: string
+                    description: Unique identifier for the request
+                example:
+                  message: Unauthorized
+                  request_id: 7a81dd1bb9d5973b473595758ddf3f37
+      parameters:
+      - name: apikey
+        in: header
+        required: true
+        schema:
+          type: string
+        description: API key for authentication
+      tags:
+      - Execute
+  /execute/text_to_speech:
+    post:
+      summary: Convert text to audio
+      operationId: convertTextToAudio
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - model
+              - input
+              - voice
+              properties:
+                model:
+                  type: string
+                  description: The model to be used for the conversion
+                  default: tts-1
+                  enum:
+                  - tts-1
+                  - tts-1-hd
+                input:
+                  type: string
+                  description: The text to be converted to audio
+                voice:
+                  type: string
+                  description: Voice in which the text should be converted
+                  default: alloy
+                  enum:
+                  - alloy
+                  - echo
+                  - fable
+                  - onyx
+                  - nova
+                  - shimmer
+      responses:
+        '200':
+          description: It returns the audio file
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Service execution message
+                  data:
+                    type: object
+                    properties:
+                      audioUrl:
+                        type: string
+                        description: URL to the generated audio file
+                example:
+                  message: Service executed successfully
+                  data:
+                    audioUrl: https://res.cloudinary.com/shisheo/video/upload/v1720553762/zxqbmpt5deedatm7q1v0.mp3
+        '400':
+          description: 'Invalid Request: Not subscribed to the service'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message
+                  errorCode:
+                    type: string
+                    description: Error code indicating the issue
+                example:
+                  message: Please subscribe to the service to use it
+                  errorCode: invalid_request
+        '401':
+          description: 'Unauthorized: Incorrect API key'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message
+                  request_id:
+                    type: string
+                    description: Unique identifier for the request
+                example:
+                  message: Unauthorized
+                  request_id: 7a81dd1bb9d5973b473595758ddf3f37
+      parameters:
+      - name: apikey
+        in: header
+        required: true
+        schema:
+          type: string
+        description: API key for authentication
+      tags:
+      - Execute
+  /execute/language_translation:
+    post:
+      summary: Translate text to another language
+      operationId: translateText
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - input
+              - languageCode
+              properties:
+                input:
+                  type: string
+                  description: The text to be translated
+                  example: Hello, how are you?
+                languageCode:
+                  type: string
+                  description: The language code for the target language (e.g., 'en' for English, 'es' for Spanish)
+                  example: es
+      responses:
+        '200':
+          description: It returns the translated text
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Service execution message
+                  data:
+                    type: object
+                    properties:
+                      translatedText:
+                        type: string
+                        description: The translated text
+                example:
+                  message: Service executed successfully
+                  data:
+                    translatedText: Hola, ¿cómo estás?
+        '400':
+          description: 'Invalid Request: Not subscribed to the service'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message
+                  errorCode:
+                    type: string
+                    description: Error code indicating the issue
+                example:
+                  message: Please subscribe to the service to use it
+                  errorCode: invalid_request
+        '401':
+          description: 'Unauthorized: Incorrect API key'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message
+                  request_id:
+                    type: string
+                    description: Unique identifier for the request
+                example:
+                  message: Unauthorized
+                  request_id: 7a81dd1bb9d5973b473595758ddf3f37
+      parameters:
+      - name: apikey
+        in: header
+        required: true
+        schema:
+          type: string
+        description: API key for authentication
+      tags:
+      - Execute
+components:
+  securitySchemes:
+    apikey:
+      type: apiKey
+      in: header
+      name: apikey
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: apikey
