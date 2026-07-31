@@ -1,7 +1,14 @@
 aid: ondemand
 name: Ondemand
-description: Ondemand is a company surfaced as a portfolio company of canaan-partners and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: OnDemand AI (on-demand.io) is a RAG-powered AI Platform-as-a-Service that lets companies
+  infuse AI into their products without managing model infrastructure. The platform exposes a REST API
+  for chat sessions and queries against a library of predefined, BYOI (Bring Your Own Inference) and BYOM
+  (Bring Your Own Model) fulfillment models, media ingestion and vector search, Knowledge / REST-API /
+  IoT(MQTT) agents, an Agents Flow Builder for workflow automation, and cloud services for speech-to-text,
+  text-to-speech and language translation. API access is authenticated with API keys, supports sync /
+  stream / webhook response modes, offset- and cursor-based pagination, and per-object rate limits. Surfaced
+  as a Canaan Partners portfolio lead and enriched from the provider's public developer documentation
+  at docs.on-demand.io.
 url: https://raw.githubusercontent.com/api-evangelist/ondemand/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,14 +16,149 @@ x-backed-by:
 - canaan-partners
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-identity-matched: https://on-demand.io
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+image: https://files.readme.io/52eb008-favicon.ico
 tags:
 - Company
-apis: []
+- Artificial Intelligence
+- Machine Learning
+- RAG
+- Agents
+- LLM
+- Platform as a Service
+- Chat
+- Workflow Automation
+- Vector Search
+apis:
+- aid: ondemand:ondemand-chat-api
+  name: Ondemand Chat API
+  description: The Chat API from Ondemand — 7 operation(s) for chat.
+  humanURL: https://docs.on-demand.io
+  baseURL: https://api.on-demand.io
+  tags:
+  - Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/ondemand-chat-api-openapi.yml
+- aid: ondemand:ondemand-config-api
+  name: Ondemand Config API
+  description: The Config API from Ondemand — 2 operation(s) for config.
+  humanURL: https://docs.on-demand.io
+  baseURL: https://api.on-demand.io
+  tags:
+  - Config
+  properties:
+  - type: OpenAPI
+    url: openapi/ondemand-config-api-openapi.yml
+- aid: ondemand:ondemand-execute-api
+  name: Ondemand Execute API
+  description: The Execute API from Ondemand — 3 operation(s) for execute.
+  humanURL: https://docs.on-demand.io
+  baseURL: https://api.on-demand.io
+  tags:
+  - Execute
+  properties:
+  - type: OpenAPI
+    url: openapi/ondemand-execute-api-openapi.yml
+- aid: ondemand:ondemand-media-api
+  name: Ondemand Media API
+  description: The Media API from Ondemand — 2 operation(s) for media.
+  humanURL: https://docs.on-demand.io
+  baseURL: https://api.on-demand.io
+  tags:
+  - Media
+  properties:
+  - type: OpenAPI
+    url: openapi/ondemand-media-api-openapi.yml
+- aid: ondemand:ondemand-user-api
+  name: Ondemand User API
+  description: The User API from Ondemand — 2 operation(s) for user.
+  humanURL: https://docs.on-demand.io
+  baseURL: https://api.on-demand.io
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/ondemand-user-api-openapi.yml
+- aid: ondemand:ondemand-workflow-api
+  name: Ondemand Workflow API
+  description: The Workflow API from Ondemand — 2 operation(s) for workflow.
+  humanURL: https://docs.on-demand.io
+  baseURL: https://api.on-demand.io
+  tags:
+  - Workflow
+  properties:
+  - type: OpenAPI
+    url: openapi/ondemand-workflow-api-openapi.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: AgenticAccess
+  url: agentic-access/ondemand-agentic-access.yml
+- type: DomainSecurity
+  url: security/ondemand-domain-security.yml
+- type: DeveloperPortal
+  url: https://docs.on-demand.io
+- type: Documentation
+  url: https://docs.on-demand.io/docs/getting-started
+- type: APIReference
+  url: https://docs.on-demand.io/reference/intro-to-ondemand-api
+- type: GettingStarted
+  url: https://docs.on-demand.io/docs/getting-started
+- type: Pricing
+  url: https://app.on-demand.io/pricing
+- type: SignUp
+  url: https://app.on-demand.io
+- type: GitHubOrganization
+  url: https://github.com/on-demand-io
+- type: Authentication
+  url: authentication/ondemand-authentication.yml
+- type: LLMsTxt
+  url: llms/ondemand-llms.txt
+- type: Packages
+  url: packages/ondemand-packages.yml
+- type: SDKs
+  url: packages/ondemand-packages.yml
+- type: MCPServer
+  url: mcp/ondemand-mcp.yml
+- type: Overlay
+  url: overlays/ondemand-overlay.yaml
+- type: Conformance
+  url: conformance/ondemand-conformance.yml
+- type: ErrorCatalog
+  url: errors/ondemand-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/ondemand-lifecycle.yml
+- type: Webhooks
+  url: asyncapi/ondemand-webhooks.yml
+- type: Conventions
+  url: conventions/ondemand-conventions.yml
+- type: DataModel
+  url: data-model/ondemand-data-model.yml
+- type: RateLimits
+  url: rate-limits/ondemand-rate-limits.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 20
+  pass: local-v1

@@ -1,0 +1,24 @@
+{
+  "provider": "ondemand",
+  "sources": [
+    "ondemand-chat-api-openapi.yml",
+    "ondemand-config-api-openapi.yml",
+    "ondemand-execute-api-openapi.yml",
+    "ondemand-media-api-openapi.yml",
+    "ondemand-user-api-openapi.yml",
+    "ondemand-workflow-api-openapi.yml"
+  ],
+  "outputs": [
+    "ondemand-chat-api-openapi.yml",
+    "ondemand-config-api-openapi.yml",
+    "ondemand-execute-api-openapi.yml",
+    "ondemand-media-api-openapi.yml",
+    "ondemand-user-api-openapi.yml",
+    "ondemand-workflow-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

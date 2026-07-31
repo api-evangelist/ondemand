@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: generated
+source: openapi/ondemand-openapi.json
+note: >-
+  Agent Skills generated from the harvested OpenAPI. Every operationId is verified
+  against openapi/ondemand-openapi.json. No provider-published AGENTS.md / skill
+  files were found.
+skills:
+- file: ondemand-chat-query.md
+  name: Run a RAG chat query
+  api: openapi/ondemand-openapi.json
+  operations: [createChatSession, submitQuery, getChatMessages]
+- file: ondemand-media-ingest.md
+  name: Ingest media for retrieval
+  api: openapi/ondemand-openapi.json
+  operations: [createMediaURL, fetchMedia, deleteMedia]
+- file: ondemand-batch-chat.md
+  name: Submit and retrieve a chat batch
+  api: openapi/ondemand-openapi.json
+  operations: [createChatBatch, getChatBatch, deleteChatBatch]

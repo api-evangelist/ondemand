@@ -1,0 +1,41 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.on-demand.io/docs/response-codes
+docs: https://docs.on-demand.io/docs/response-codes
+format: http-status
+envelope: >-
+  Errors are returned with standard HTTP status codes; error detail is conveyed
+  in the JSON response body (the OpenAPI 4XX/5XX responses reference a shared
+  Error schema). OnDemand does not advertise RFC 9457 application/problem+json.
+problems:
+- status: 200
+  title: OK
+  meaning: Every successful GET request returns 200.
+- status: 201
+  title: Created
+  meaning: POST requests that create resources typically return 201.
+- status: 400
+  title: Bad Request
+  meaning: Malformed / invalid request payloads.
+  remediation: Validate the request body and parameters against the OpenAPI schema.
+- status: 401
+  title: Unauthorized
+  meaning: Invalid API key supplied in the request header.
+  remediation: Send a valid key in the apikey header (see Authentication).
+- status: 403
+  title: Forbidden
+  meaning: The API request is not included in the caller's plan.
+  remediation: Upgrade the plan at https://app.on-demand.io/pricing.
+- status: 404
+  title: Not Found
+  meaning: The requested resource or route does not exist.
+- status: 429
+  title: Rate Limit Exceeded
+  meaning: Rate limits were exceeded.
+  remediation: Retry after the timeout; request higher quotas via Settings > Limit.
+- status: 500
+  title: Server Error
+  meaning: The server encountered an unexpected error while processing the request.
+derived_from_openapi:
+  source: openapi/ondemand-openapi.json
+  response_codes_seen: [200, 400, 401, 404, 500, 4XX, 5XX]

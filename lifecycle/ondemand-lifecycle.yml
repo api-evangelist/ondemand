@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.on-demand.io
+versioning:
+  scheme: uri-path
+  current: v1
+  note: >-
+    API paths are versioned in-path (e.g. /chat/v1/sessions, /media/v1/public/file,
+    /config/v1/public/mqtt_user, /user/v1/public/...). The /execute and /workflow
+    services are unversioned in-path.
+  docs: https://docs.on-demand.io/reference/intro-to-ondemand-api
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No public deprecation policy or RFC 8594 Sunset/Deprecation header support was found.
+sla:
+  url: null
+  note: No public SLA / uptime commitment page was found.
+status_page: null
+status_page_note: >-
+  No dedicated status page (status.on-demand.io did not resolve) was found during
+  this pass.
+deprecated_operations: []

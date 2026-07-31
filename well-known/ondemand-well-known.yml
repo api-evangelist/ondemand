@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: searched
+note: >-
+  Probed the /.well-known/ discovery surface on the API host and the marketing
+  host. api.on-demand.io returns hard 404 for all probed paths. on-demand.io
+  returns HTTP 200 with the SPA HTML shell for every path (soft-404s, content-type
+  text/html) — these are NOT valid well-known documents and are recorded as
+  not-found. No real well-known documents were captured; no WellKnown pointer wired.
+hosts:
+- host: https://api.on-demand.io
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://on-demand.io
+  documents:
+  - {path: /.well-known/security.txt, status: 200, valid: false, note: SPA HTML shell (soft-404)}
+  - {path: /.well-known/openid-configuration, status: 200, valid: false, note: SPA HTML shell (soft-404)}
+  - {path: /.well-known/oauth-authorization-server, status: 200, valid: false, note: SPA HTML shell (soft-404)}
+  - {path: /.well-known/api-catalog, status: 200, valid: false, note: SPA HTML shell (soft-404)}
+  - {path: /.well-known/ai-plugin.json, status: 200, valid: false, note: SPA HTML shell (soft-404)}

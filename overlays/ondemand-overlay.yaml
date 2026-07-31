@@ -1,0 +1,20 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for OnDemand AI
+  version: 1.0.0
+extends: openapi/ondemand-openapi.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-enriched: '2026-07-20'
+    x-apievangelist-source: assembled from docs.on-demand.io per-operation OpenAPI
+      fragments
+    x-api-provider: OnDemand AI (on-demand.io)
+- target: $.info
+  update:
+    x-agent-ready:
+      authentication: authentication/ondemand-authentication.yml
+      conventions: conventions/ondemand-conventions.yml
+      errors: errors/ondemand-problem-types.yml
+      rate_limits: rate-limits/ondemand-rate-limits.yml
+      webhooks: asyncapi/ondemand-webhooks.yml

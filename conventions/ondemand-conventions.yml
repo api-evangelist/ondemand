@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.on-demand.io
+docs: https://docs.on-demand.io/reference/intro-to-ondemand-api
+authentication:
+  style: api-key
+  location: header
+  parameter: apikey
+  docs: https://docs.on-demand.io/docs/authentication
+pagination:
+  styles:
+  - offset-based
+  - cursor-based
+  params:
+    offset: [page, limit, sort]
+    cursor: [cursor, limit, sort]
+  note: >-
+    Media/collection listings use offset-based pagination (page/limit); chat
+    session/message listings use cursor-based pagination (cursor/limit). Both
+    accept a sort parameter.
+  docs: https://docs.on-demand.io/reference/how-to-paginate
+response_modes:
+  field: responseMode
+  values: [sync, stream, webhook]
+  note: >-
+    Chat query submission supports synchronous, streaming, and webhook delivery
+    of responses (see Webhooks).
+idempotency:
+  supported: false
+  note: >-
+    OnDemand does not document an idempotency-key mechanism. Do not assume safe
+    retries for POST operations.
+error_envelope:
+  style: http-status
+  detail: JSON body with error message (shared Error schema in the OpenAPI 4XX/5XX responses).
+  ref: errors/ondemand-problem-types.yml
+rate_limit_signaling:
+  exceeded_status: 429
+  ref: rate-limits/ondemand-rate-limits.yml
+versioning:
+  scheme: uri-path
+  ref: lifecycle/ondemand-lifecycle.yml
+webhooks:
+  ref: asyncapi/ondemand-webhooks.yml

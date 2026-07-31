@@ -1,0 +1,27 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.on-demand.io/docs/webhooks
+docs: https://docs.on-demand.io/docs/webhooks
+spec_type: Webhooks
+summary: >-
+  OnDemand AI supports a webhook response mode for its Chat and Media APIs. When a
+  query is submitted with responseMode=webhook, the completed response is delivered
+  to the company-configured webhook endpoint rather than returned inline. Webhooks
+  are configured in the app (Settings > Webhooks).
+configuration:
+  management_url: https://app.on-demand.io/settings/webhooks
+  fields:
+  - name: endpoint_url
+    description: The URL where the webhook will send requests.
+  - name: webhook_secret
+    description: A secret key used to secure/verify webhook requests.
+  - name: success_response_codes
+    description: HTTP codes that indicate a successful delivery (e.g. 200).
+  - name: retry_mechanism
+    description: Retry strategy — exponential or sequential over time.
+delivery:
+  trigger: Chat query submitted with responseMode=webhook (see submitQuery).
+  applies_to: [Chat API, Media API]
+notes: >-
+  No published AsyncAPI document was found; this captures the documented webhook
+  surface. Payload schema is not published verbatim in the public docs.

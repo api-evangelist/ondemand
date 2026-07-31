@@ -1,0 +1,78 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: openapi/ondemand-openapi.json
+note: No official hosted/remote MCP server was found for OnDemand AI. This is a CANDIDATE
+  tool list derived one-per-operation from the harvested OpenAPI, offered as a starting
+  point.
+server:
+  name: ondemand
+  transport: http
+  url: null
+tools:
+- name: fetch_media
+  description: Fetch Media
+  source_operation: openapi/ondemand-openapi.json#fetchMedia
+- name: create_media_u_r_l
+  description: Create Media URL
+  source_operation: openapi/ondemand-openapi.json#createMediaURL
+- name: delete_media
+  description: Delete Media
+  source_operation: openapi/ondemand-openapi.json#deleteMedia
+- name: create_chat_session
+  description: Create Chat Session
+  source_operation: openapi/ondemand-openapi.json#createChatSession
+- name: get_chat_sessions
+  description: Get Chat Sessions
+  source_operation: openapi/ondemand-openapi.json#getChatSessions
+- name: submit_query
+  description: Submit Query
+  source_operation: openapi/ondemand-openapi.json#submitQuery
+- name: get_chat_session
+  description: Get Chat Session
+  source_operation: openapi/ondemand-openapi.json#getChatSession
+- name: get_chat_message
+  description: Get Chat Message
+  source_operation: openapi/ondemand-openapi.json#getChatMessage
+- name: get_chat_messages
+  description: Get Chat Messages
+  source_operation: openapi/ondemand-openapi.json#getChatMessages
+- name: create_chat_batch
+  description: Create Chat Batch
+  source_operation: openapi/ondemand-openapi.json#createChatBatch
+- name: get_chat_batches
+  description: Get Chat Batches
+  source_operation: openapi/ondemand-openapi.json#getChatBatches
+- name: get_chat_batch
+  description: Get Chat Batch
+  source_operation: openapi/ondemand-openapi.json#getChatBatch
+- name: delete_chat_batch
+  description: Delete Chat Batch
+  source_operation: openapi/ondemand-openapi.json#deleteChatBatch
+- name: convert_audio_to_text
+  description: Convert audio to text
+  source_operation: openapi/ondemand-openapi.json#convertAudioToText
+- name: convert_text_to_audio
+  description: Convert text to audio
+  source_operation: openapi/ondemand-openapi.json#convertTextToAudio
+- name: translate_text
+  description: Translate text to another language
+  source_operation: openapi/ondemand-openapi.json#translateText
+- name: create_mqtt_user
+  description: Create a new MQTT user
+  source_operation: openapi/ondemand-openapi.json#createMqttUser
+- name: delete_mqtt_user
+  description: Delete an MQTT user
+  source_operation: openapi/ondemand-openapi.json#deleteMqttUser
+- name: generate_api_key
+  description: Generate a REST API key
+  source_operation: openapi/ondemand-openapi.json#generateApiKey
+- name: delete_api_key
+  description: Delete a REST API key
+  source_operation: openapi/ondemand-openapi.json#deleteApiKey
+- name: create_workflow
+  description: Create workflow
+  source_operation: openapi/ondemand-openapi.json#createWorkflow
+- name: update_workflow
+  description: Update workflow
+  source_operation: openapi/ondemand-openapi.json#updateWorkflow

@@ -1,0 +1,38 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/ondemand-openapi.json
+note: Entity graph derived from OpenAPI paths and id-reference fields (sessionId,
+  messageId, batchId, fileId, userId, apiKeyId).
+entities:
+- name: Media
+- name: ChatSession
+- name: ChatMessage
+- name: ChatBatch
+- name: Workflow
+- name: MqttUser
+- name: ApiKey
+id_fields:
+  Media: fileId
+  ChatSession: sessionId
+  ChatMessage: messageId
+  ChatBatch: batchId
+  MqttUser: userId
+  ApiKey: apiKeyId
+  Workflow: id
+relationships:
+- from: ChatSession
+  type: has_many
+  to: ChatMessage
+  via: sessionId
+- from: ChatMessage
+  type: belongs_to
+  to: ChatSession
+  via: sessionId
+- from: ChatBatch
+  type: has_many
+  to: ChatMessage
+  via: batchId
+- from: ChatSession
+  type: references
+  to: Media
+  via: pluginIds/context

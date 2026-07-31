@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.on-demand.io/docs/rate-limiting
+docs: https://docs.on-demand.io/docs/rate-limiting
+scope: per-company (free plan)
+exceeded_status: 429
+retry_guidance: Retry the request after the timeout when a 429 is returned.
+increase_process: >-
+  Request higher quotas via Settings > Limit > Increase Your Limits; response
+  within 2 business days. Paid plan details at https://app.on-demand.io/pricing.
+rate_limits:
+- object: Media Upload
+  limit_count: 5
+  window: minute
+  unit: requests
+- object: RAG Calls
+  limit_count: 100
+  window: minute
+  unit: requests
+- object: Maximum GPU Memory Allocated Per Company
+  limit_count: 40
+  unit: GB
+- object: Maximum vCPU Per Company
+  limit_count: 10
+  unit: vCPU

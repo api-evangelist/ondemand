@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/on-demand-io
+packages:
+- language: go
+  registry: pkg.go.dev
+  name: github.com/dinson/ond-api-client-go
+  repo: https://github.com/on-demand-io/ondemand-api-client-go
+  url: https://pkg.go.dev/github.com/dinson/ond-api-client-go
+  install: go get github.com/dinson/ond-api-client-go
+  official: true
+  description: >-
+    Official Go client package for the OnDemand AI API, published under the
+    on-demand.io GitHub organization (on-demand-io/ondemand-api-client-go).
+notes: >-
+  Only one first-party client library was found — the official Go SDK under the
+  on-demand-io GitHub org. No first-party JavaScript/Python/Java/.NET SDKs were
+  found on npm, PyPI, Maven Central or NuGet as of this pass. NOTE: the PyPI
+  package "ondemand-ai" (ondemand-ai.com.br) is a DIFFERENT, unrelated company
+  and is deliberately excluded here.
