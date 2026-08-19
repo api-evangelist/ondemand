@@ -1,0 +1,89 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OnDemand AI Chat Execute API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Execute",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Convert audio to text",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.on-demand.io/execute/speech_to_text",
+            "headers": [
+              {
+                "name": "apikey",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Convert audio to text"
+        },
+        {
+          "info": {
+            "name": "Convert text to audio",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.on-demand.io/execute/text_to_speech",
+            "headers": [
+              {
+                "name": "apikey",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Convert text to audio"
+        },
+        {
+          "info": {
+            "name": "Translate text to another language",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.on-demand.io/execute/language_translation",
+            "headers": [
+              {
+                "name": "apikey",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Translate text to another language"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

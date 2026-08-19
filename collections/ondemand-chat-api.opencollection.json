@@ -1,0 +1,295 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OnDemand AI Chat API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Chat",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Chat Sessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.on-demand.io/chat/v1/sessions",
+            "params": [
+              {
+                "name": "externalUserId",
+                "value": "",
+                "type": "query",
+                "description": "Filter the chat sessions based on external user"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort order of the sessions based on its creation time"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "It acts as a pagination key and used to retrieve next results. For first iteration, this parameter must not be set. For subsequent iterations,  it must be set to `pagination.next` value from previous response."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the total number of results to retrieve. If the provided value is less than  the minimum allowed limit, it will be reset to the default value. Conversely, if the  provided value exceeds the maximum allowed limit, it will be reset to the maximum value."
+              }
+            ]
+          },
+          "docs": "Retrieve chat sessions"
+        },
+        {
+          "info": {
+            "name": "Create Chat Session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.on-demand.io/chat/v1/sessions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new chat session"
+        },
+        {
+          "info": {
+            "name": "Submit Query",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.on-demand.io/chat/v1/sessions/:sessionId/query",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the session linked to this query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit a query to a chat session for processing"
+        },
+        {
+          "info": {
+            "name": "Get Chat Session",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.on-demand.io/chat/v1/sessions/:sessionId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the chat session to retrieve"
+              }
+            ]
+          },
+          "docs": "Retrieve a specific chat session"
+        },
+        {
+          "info": {
+            "name": "Get Chat Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.on-demand.io/chat/v1/sessions/:sessionId/messages/:messageId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the chat session linked to the chat message"
+              },
+              {
+                "name": "messageId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the chat message to retrieve"
+              }
+            ]
+          },
+          "docs": "Retrieve a specific chat message"
+        },
+        {
+          "info": {
+            "name": "Get Chat Messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.on-demand.io/chat/v1/sessions/:sessionId/messages",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the chat session"
+              },
+              {
+                "name": "externalUserId",
+                "value": "",
+                "type": "query",
+                "description": "Filter the chat messages based on external user"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort order of the messages based on its creation time"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "It acts as a pagination key and used to retrieve next results. For first iteration, this parameter must not be set. For subsequent iterations,  it must be set to `pagination.next` value from previous response."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the total number of results to retrieve. If the provided value is less than  the minimum allowed limit, it will be reset to the default value. Conversely, if the  provided value exceeds the maximum allowed limit, it will be reset to the maximum value."
+              }
+            ]
+          },
+          "docs": "Retrieve messages of a specific chat session"
+        },
+        {
+          "info": {
+            "name": "Get Chat Batches",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.on-demand.io/chat/v1/batches",
+            "params": [
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Filter batches by status"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Filter batches by partial match on name (case-insensitive)"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort order of the batches based on its creation time"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "It acts as a pagination key and used to retrieve next results. For first iteration, this parameter must not be set. For subsequent iterations,  it must be set to `pagination.next` value from previous response."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the total number of results to retrieve. If the provided value is less than  the minimum allowed limit, it will be reset to the default value. Conversely, if the  provided value exceeds the maximum allowed limit, it will be reset to the maximum value."
+              }
+            ]
+          },
+          "docs": "Retrieve chat batches"
+        },
+        {
+          "info": {
+            "name": "Create Chat Batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.on-demand.io/chat/v1/batches",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "name",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Submit a batch of chat queries for asynchronous processing"
+        },
+        {
+          "info": {
+            "name": "Get Chat Batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.on-demand.io/chat/v1/batches/:batchId",
+            "params": [
+              {
+                "name": "batchId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the chat batch to retrieve"
+              }
+            ]
+          },
+          "docs": "Retrieve a specific chat batch"
+        },
+        {
+          "info": {
+            "name": "Delete Chat Batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.on-demand.io/chat/v1/batches/:batchId",
+            "params": [
+              {
+                "name": "batchId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the chat batch to delete"
+              }
+            ]
+          },
+          "docs": "Delete a specific chat batch"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

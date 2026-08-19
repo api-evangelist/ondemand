@@ -1,0 +1,127 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OnDemand AI Chat Media API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Media",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch Media",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.on-demand.io/media/v1/public/file",
+            "params": [
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sorting order of media files. Users can choose to sort the media files based on two options: createdAt and updatedAt. Add a \"-\" sign before these parameters to sort media files in descending order."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for pagination"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of items per page"
+              },
+              {
+                "name": "plugins",
+                "value": "",
+                "type": "query",
+                "description": "Filter to retrieve specific media corresponding to specific pluginId"
+              },
+              {
+                "name": "externalUserId",
+                "value": "",
+                "type": "query",
+                "description": "Filter to retrieve media corresponding to specific externalUserId"
+              },
+              {
+                "name": "source",
+                "value": "",
+                "type": "query",
+                "description": "Filter to retrieve media of a specific type"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Fetches media files with sorting, pagination and filters"
+        },
+        {
+          "info": {
+            "name": "Create Media URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.on-demand.io/media/v1/public/file",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "used to create new media from URLs of document, audio, video, youtube, image"
+        },
+        {
+          "info": {
+            "name": "Delete Media",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.on-demand.io/media/v1/public/file/:fileId",
+            "params": [
+              {
+                "name": "fileId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the media file to be deleted"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Deletes a media file by its ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

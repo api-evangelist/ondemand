@@ -1,0 +1,450 @@
+{
+  "item": [
+    {
+      "id": "64568302-3f74-409e-85a6-2f08733be86f",
+      "name": "Media",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "be210d01-0949-40b5-be88-6013640f8fc1",
+          "name": "Fetch Media",
+          "request": {
+            "name": "Fetch Media",
+            "description": {
+              "content": "Fetches media files with sorting, pagination and filters",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "media",
+                "v1",
+                "public",
+                "file"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "-createdAt",
+                  "description": "Sorting order of media files. Users can choose to sort the media files based on two options: createdAt and updatedAt. Add a \"-\" sign before these parameters to sort media files in descending order."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for pagination"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "1",
+                  "description": "Number of items per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "plugins",
+                  "value": "<string>",
+                  "description": "Filter to retrieve specific media corresponding to specific pluginId"
+                },
+                {
+                  "disabled": false,
+                  "key": "externalUserId",
+                  "value": "<string>",
+                  "description": "Filter to retrieve media corresponding to specific externalUserId"
+                },
+                {
+                  "disabled": false,
+                  "key": "source",
+                  "value": "<string>",
+                  "description": "Filter to retrieve media of a specific type"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7069e48f-522a-4fd2-8ce4-5a4893b1ea2b",
+              "name": "Media fetched successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "media",
+                    "v1",
+                    "public",
+                    "file"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "updatedAt"
+                    },
+                    {
+                      "key": "page",
+                      "value": "4"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "plugins",
+                      "value": "plugin-1713961903"
+                    },
+                    {
+                      "key": "externalUserId",
+                      "value": "53b1c579bdf3de74f76bdac9"
+                    },
+                    {
+                      "key": "source",
+                      "value": "document"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Media fetched successfully\",\n  \"data\": [\n    {\n      \"id\": \"668003840c07ddab21bdacea\",\n      \"companyId\": \"662cd783b00c6f8f6eb110d5\",\n      \"sessionId\": \"6633e8d91433b0186f85c9d8\",\n      \"url\": \"https://res.cloudinary.com/shisheo/image/upload/v1719665541/1d6ed49b-b2eb-4fba-b019-9e8a23076556.pdf.pdf\",\n      \"sourceUrl\": \"https://res.cloudinary.com/dbbqfdikp/image/upload/v1712401452/hrhjyqyo0injma4ppupb.pdf\",\n      \"name\": \"TESTING_DOC_01\",\n      \"source\": \"document\",\n      \"mimeType\": \"application/pdf\",\n      \"extension\": \"pdf\",\n      \"plugins\": [\n        \"plugin-1713954536\",\n        \"plugin-1713954536\"\n      ],\n      \"actionStatus\": \"processing\",\n      \"isDeleted\": false,\n      \"responseMode\": \"sync\",\n      \"transcriptionHours\": 0.154,\n      \"externalUserId\": \"662cd783b00c6f8f6eb110d5\",\n      \"createdBy\": \"Peeyush Mishra\",\n      \"updatedBy\": \"Peeyush Mishra\"\n    },\n    {\n      \"id\": \"668003840c07ddab21bdacea\",\n      \"companyId\": \"662cd783b00c6f8f6eb110d5\",\n      \"sessionId\": \"6633e8d91433b0186f85c9d8\",\n      \"url\": \"https://res.cloudinary.com/shisheo/image/upload/v1719665541/1d6ed49b-b2eb-4fba-b019-9e8a23076556.pdf.pdf\",\n      \"sourceUrl\": \"https://res.cloudinary.com/dbbqfdikp/image/upload/v1712401452/hrhjyqyo0injma4ppupb.pdf\",\n      \"name\": \"TESTING_DOC_01\",\n      \"source\": \"document\",\n      \"mimeType\": \"application/pdf\",\n      \"extension\": \"pdf\",\n      \"plugins\": [\n        \"plugin-1713954536\",\n        \"plugin-1713954536\"\n      ],\n      \"actionStatus\": \"processing\",\n      \"isDeleted\": false,\n      \"responseMode\": \"sync\",\n      \"transcriptionHours\": 0.154,\n      \"externalUserId\": \"662cd783b00c6f8f6eb110d5\",\n      \"createdBy\": \"Peeyush Mishra\",\n      \"updatedBy\": \"Peeyush Mishra\"\n    }\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"limit\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ff68faf8-c443-4caf-bad1-b5aee76305f8",
+          "name": "Create Media URL",
+          "request": {
+            "name": "Create Media URL",
+            "description": {
+              "content": "used to create new media from URLs of document, audio, video, youtube, image",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "media",
+                "v1",
+                "public",
+                "file"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"<uri>\",\n  \"plugins\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"responseMode\": \"<string>\",\n  \"createdBy\": \"<string>\",\n  \"updatedBy\": \"<string>\",\n  \"sessionId\": \"<string>\",\n  \"externalUserId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"sizeBytes\": \"<integer>\",\n  \"pluginInputs\": [\n    {\n      \"key_0\": {\n        \"postProcess\": {\n          \"chatPluginId\": \"<string>\"\n        }\n      }\n    },\n    {\n      \"key_0\": {\n        \"postProcess\": {\n          \"chatPluginId\": \"<string>\"\n        }\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2406d401-50da-4344-9242-d011001b6f77",
+              "name": "Media created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "media",
+                    "v1",
+                    "public",
+                    "file"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"https://res.cloudinary.com/dbbqfdikp/image/upload/v1712401452/hrhjyqyo0injma4ppupb.pdf\",\n  \"plugins\": [\n    \"plugin-1713954536\",\n    \"plugin-1713954536\"\n  ],\n  \"responseMode\": \"sync\",\n  \"createdBy\": \"Peeyush Mishra\",\n  \"updatedBy\": \"Peeyush Mishra\",\n  \"sessionId\": \"6633e8d91433b0186f85c9d8\",\n  \"externalUserId\": \"867ee8d97393b0156f85c4s9\",\n  \"name\": \"TESTING_DOC_01\",\n  \"sizeBytes\": 7834093,\n  \"pluginInputs\": [\n    {\n      \"key_0\": {\n        \"postProcess\": {\n          \"chatPluginId\": \"plugin-998877\"\n        }\n      }\n    },\n    {\n      \"key_0\": {\n        \"postProcess\": {\n          \"chatPluginId\": \"plugin-998877\"\n        }\n      },\n      \"key_1\": {\n        \"postProcess\": {\n          \"chatPluginId\": \"plugin-998877\"\n        }\n      },\n      \"key_2\": {\n        \"postProcess\": {\n          \"chatPluginId\": \"plugin-998877\"\n        }\n      },\n      \"key_3\": {\n        \"postProcess\": {\n          \"chatPluginId\": \"plugin-998877\"\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Media Created\",\n  \"data\": {\n    \"id\": \"668003840c07ddab21bdacea\",\n    \"companyId\": \"662cd783b00c6f8f6eb110d5\",\n    \"sessionId\": \"6633e8d91433b0186f85c9d8\",\n    \"externalUserId\": \"662cd783b00c6f8f6eb110d5\",\n    \"url\": \"https://res.cloudinary.com/shisheo/image/upload/v1719665541/1d6ed49b-b2eb-4fba-b019-9e8a23076556.pdf.pdf\",\n    \"sourceUrl\": \"https://res.cloudinary.com/dbbqfdikp/image/upload/v1712401452/hrhjyqyo0injma4ppupb.pdf\",\n    \"extractedTextUrl\": \"https://res.cloudinary.com/shisheo/raw/upload/v1719665543/mdzd6smbv8ladba948k3.txt\",\n    \"name\": \"TESTING_DOC_01\",\n    \"sizeBytes\": 7834093,\n    \"source\": \"document\",\n    \"mimeType\": \"application/pdf\",\n    \"extension\": \"pdf\",\n    \"plugins\": [\n      \"plugin-1713954536\",\n      \"plugin-1713954536\"\n    ],\n    \"context\": \"The conversation takes place between two individuals, John and Yumi. They are discussing the hot weather and the start of summer. John mentions that he is from London, where it rains a lot, and Yumi reveals that she is from Hokkaido, Japan, where it is colder even in the summer. They talk about their respective hometowns' weather and how they spend their summers. Yumi mentions taking her dog to the beach, while John talks about picnics in the park. They also discuss their interests, with Yumi expressing a desire to visit museums in London, and John mentioning the popularity of football games in his hometown.\",\n    \"extractedText\": null,\n    \"actionStatus\": \"completed\",\n    \"failedReason\": null,\n    \"isDeleted\": false,\n    \"responseMode\": \"sync\",\n    \"createdBy\": \"Peeyush Mishra\",\n    \"updatedBy\": \"Peeyush Mishra\",\n    \"pluginInputs\": [\n      {\n        \"key_0\": {\n          \"postProcess\": {\n            \"chatPluginId\": \"plugin-998877\"\n          }\n        },\n        \"key_1\": {\n          \"postProcess\": {\n            \"chatPluginId\": \"plugin-998877\"\n          }\n        }\n      },\n      {\n        \"key_0\": {\n          \"postProcess\": {\n            \"chatPluginId\": \"plugin-998877\"\n          }\n        }\n      }\n    ],\n    \"transcriptionHours\": 634,\n    \"createdAt\": \"2024-06-29T12:52:21.398Z\",\n    \"updatedAt\": \"2024-06-29T12:52:28.258Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d8f7ba31-a545-40a7-af4b-7e0eaf49464b",
+          "name": "Delete Media",
+          "request": {
+            "name": "Delete Media",
+            "description": {
+              "content": "Deletes a media file by its ID",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "media",
+                "v1",
+                "public",
+                "file",
+                ":fileId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) ID of the media file to be deleted"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ae1242b1-0d57-4bce-b9ea-13c568ca98df",
+              "name": "Media Deleted!",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "media",
+                    "v1",
+                    "public",
+                    "file",
+                    ":fileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) ID of the media file to be deleted"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Media Deleted!\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.on-demand.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2ef29261-c1b8-4ac4-b77a-226c3905e560",
+    "name": "OnDemand AI Chat Media API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OnDemand AI is a RAG-powered AI Platform-as-a-Service. This OpenAPI definition was assembled by the API Evangelist enrichment pipeline from the per-operation OpenAPI fragments published on the OnDemand AI ReadMe documentation (https://docs.on-demand.io/reference).",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OnDemand AI Chat Workflow API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Workflow",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create workflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.on-demand.io/workflow",
+            "headers": [
+              {
+                "name": "X-USER-ID",
+                "value": ""
+              },
+              {
+                "name": "X-COMPANY-ID",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create workflow"
+        },
+        {
+          "info": {
+            "name": "Update workflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.on-demand.io/workflow/:id",
+            "headers": [
+              {
+                "name": "X-USER-ID",
+                "value": ""
+              },
+              {
+                "name": "X-COMPANY-ID",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Workflow ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update workflow"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

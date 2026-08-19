@@ -1,0 +1,2435 @@
+{
+  "item": [
+    {
+      "id": "c7395f07-8fb5-4274-944c-0b9b452efd76",
+      "name": "Chat",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "568b0327-99e7-41c3-806f-098b722b17f5",
+          "name": "Create Chat Session",
+          "request": {
+            "name": "Create Chat Session",
+            "description": {
+              "content": "Create a new chat session",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chat",
+                "v1",
+                "sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"externalUserId\": \"<string>\",\n  \"pluginIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "902bbc9e-ce37-4efe-a027-168f90843f21",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"externalUserId\": \"<string>\",\n  \"pluginIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Chat session created successfully\",\n  \"data\": {\n    \"id\": \"662a0a7c4fe356d0a3aa60d3\",\n    \"companyId\": \"6629c6bb4733922ce5efc543\",\n    \"externalUserId\": \"06931013-9ae4-449d-87e8-4224508ba0d0\",\n    \"pluginIds\": [\n      \"plugin-1813954526\",\n      \"plugin-1813954526\"\n    ],\n    \"title\": \"Latest news about Afghanistan\",\n    \"createdBy\": \"6629c6bb4733922ce5efc544\",\n    \"createdAt\": \"2024-04-25T07:47:08.201467423Z\",\n    \"updatedAt\": \"2024-04-25T07:47:08.201467477Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "404fe9a7-f0e7-4c56-99db-9d7e1917116a",
+              "name": "Client-side error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"externalUserId\": \"<string>\",\n  \"pluginIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"invalid_request\",\n  \"message\": \"Invalid request parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a041e0c8-6c63-4a65-9ae2-f56d12e518b8",
+              "name": "Server-side Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"externalUserId\": \"<string>\",\n  \"pluginIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"server_error\",\n  \"message\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aebd3149-32bf-442a-92be-e8ca7d025245",
+          "name": "Get Chat Sessions",
+          "request": {
+            "name": "Get Chat Sessions",
+            "description": {
+              "content": "Retrieve chat sessions",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chat",
+                "v1",
+                "sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "externalUserId",
+                  "value": "<string>",
+                  "description": "Filter the chat sessions based on external user"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "desc",
+                  "description": "Sort order of the sessions based on its creation time"
+                },
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "It acts as a pagination key and used to retrieve next results. For first iteration, this parameter must not be set. For subsequent iterations,  it must be set to `pagination.next` value from previous response."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Specifies the total number of results to retrieve. If the provided value is less than  the minimum allowed limit, it will be reset to the default value. Conversely, if the  provided value exceeds the maximum allowed limit, it will be reset to the maximum value."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7f74b9fc-2dfe-4602-b631-96094fed77cf",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "externalUserId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Chat session fetched successfully\",\n  \"data\": [\n    {\n      \"id\": \"662a0a7c4fe356d0a3aa60d3\",\n      \"companyId\": \"6629c6bb4733922ce5efc543\",\n      \"externalUserId\": \"06931013-9ae4-449d-87e8-4224508ba0d0\",\n      \"pluginIds\": [\n        \"plugin-1813954526\",\n        \"plugin-1813954526\"\n      ],\n      \"title\": \"Latest news about Afghanistan\",\n      \"createdBy\": \"6629c6bb4733922ce5efc544\",\n      \"createdAt\": \"2024-04-25T07:47:08.201467423Z\",\n      \"updatedAt\": \"2024-04-25T07:47:08.201467477Z\"\n    },\n    {\n      \"id\": \"662a0a7c4fe356d0a3aa60d3\",\n      \"companyId\": \"6629c6bb4733922ce5efc543\",\n      \"externalUserId\": \"06931013-9ae4-449d-87e8-4224508ba0d0\",\n      \"pluginIds\": [\n        \"plugin-1813954526\",\n        \"plugin-1813954526\"\n      ],\n      \"title\": \"Latest news about Afghanistan\",\n      \"createdBy\": \"6629c6bb4733922ce5efc544\",\n      \"createdAt\": \"2024-04-25T07:47:08.201467423Z\",\n      \"updatedAt\": \"2024-04-25T07:47:08.201467477Z\"\n    }\n  ],\n  \"pagination\": {\n    \"next\": \"6629c6bb4733923ce5efc529\",\n    \"limit\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bc7e1265-37c8-4ca6-a111-e399d1164f15",
+              "name": "Client-side error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "externalUserId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"invalid_request\",\n  \"message\": \"Invalid request parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "744c6aa3-ac65-4edd-aac9-a5a2aae59379",
+              "name": "Server-side Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "externalUserId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"server_error\",\n  \"message\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "da189ba6-8489-46fe-b8e7-4ebf39c265d2",
+          "name": "Submit Query",
+          "request": {
+            "name": "Submit Query",
+            "description": {
+              "content": "Submit a query to a chat session for processing",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chat",
+                "v1",
+                "sessions",
+                ":sessionId",
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) ID of the session linked to this query"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"endpointId\": \"<string>\",\n  \"responseMode\": \"<string>\",\n  \"pluginIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"fulfillmentOnly\": false,\n  \"modelConfigs\": {\n    \"fulfillmentPrompt\": \"<string>\",\n    \"stopSequences\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"temperature\": 0.7,\n    \"topP\": 1,\n    \"presencePenalty\": 0,\n    \"frequencyPenalty\": 0\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a8574d2b-3690-4b7f-a8ce-cb91172c2057",
+              "name": "Sync Mode Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "query"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) ID of the session linked to this query"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"endpointId\": \"predefined-openai-gpt4o\",\n  \"responseMode\": \"<string>\",\n  \"pluginIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"fulfillmentOnly\": false,\n  \"modelConfigs\": {\n    \"fulfillmentPrompt\": \"<string>\",\n    \"stopSequences\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"temperature\": 0.7,\n    \"topP\": 1,\n    \"presencePenalty\": 0,\n    \"frequencyPenalty\": 0\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Chat query submitted successfully\",\n  \"data\": {\n    \"sessionId\": \"668659ddf566ac1d5a44a4ea\",\n    \"messageId\": \"668659eaf566ac1d5a44a4eb\",\n    \"answer\": \"AI, or Artificial Intelligence, refers to the simulation of human intelligence in machines that are programmed to think and learn like humans. These systems can perform tasks that typically require human intelligence, such as visual perception, speech recognition, decision-making, and language translation. AI can be categorized into narrow AI, which is designed for a specific task, and general AI, which has the potential to perform any intellectual task that a human can do.\",\n    \"status\": \"completed\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0fbd5e0c-5f7c-449e-9bab-cd8185ee011d",
+              "name": "Client-side error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "query"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) ID of the session linked to this query"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"endpointId\": \"predefined-openai-gpt4o\",\n  \"responseMode\": \"<string>\",\n  \"pluginIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"fulfillmentOnly\": false,\n  \"modelConfigs\": {\n    \"fulfillmentPrompt\": \"<string>\",\n    \"stopSequences\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"temperature\": 0.7,\n    \"topP\": 1,\n    \"presencePenalty\": 0,\n    \"frequencyPenalty\": 0\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"invalid_request\",\n  \"message\": \"Invalid request parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3384b36c-62c6-41df-8c41-101e76323f3a",
+              "name": "Server-side Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "query"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) ID of the session linked to this query"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"endpointId\": \"predefined-openai-gpt4o\",\n  \"responseMode\": \"<string>\",\n  \"pluginIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"fulfillmentOnly\": false,\n  \"modelConfigs\": {\n    \"fulfillmentPrompt\": \"<string>\",\n    \"stopSequences\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"temperature\": 0.7,\n    \"topP\": 1,\n    \"presencePenalty\": 0,\n    \"frequencyPenalty\": 0\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"server_error\",\n  \"message\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "80185d25-8fdb-4e1e-8636-f50b6fcd8168",
+          "name": "Get Chat Session",
+          "request": {
+            "name": "Get Chat Session",
+            "description": {
+              "content": "Retrieve a specific chat session",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chat",
+                "v1",
+                "sessions",
+                ":sessionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) ID of the chat session to retrieve"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "53595dab-377e-4997-a9c8-b18c6215cf75",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) ID of the chat session to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Chat session fetched successfully\",\n  \"data\": {\n    \"id\": \"662a0a7c4fe356d0a3aa60d3\",\n    \"companyId\": \"6629c6bb4733922ce5efc543\",\n    \"externalUserId\": \"06931013-9ae4-449d-87e8-4224508ba0d0\",\n    \"pluginIds\": [\n      \"plugin-1813954526\",\n      \"plugin-1813954526\"\n    ],\n    \"title\": \"Latest news about Afghanistan\",\n    \"createdBy\": \"6629c6bb4733922ce5efc544\",\n    \"createdAt\": \"2024-04-25T07:47:08.201467423Z\",\n    \"updatedAt\": \"2024-04-25T07:47:08.201467477Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9aef0baf-fe39-42db-9ab6-6ffdf6e93139",
+              "name": "Client-side error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) ID of the chat session to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"invalid_request\",\n  \"message\": \"Invalid request parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b40d7290-0cfa-448d-b964-a7d6a8ded5b1",
+              "name": "Server-side Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) ID of the chat session to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"server_error\",\n  \"message\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b8b9a76e-a212-4870-b265-7f3b5130095c",
+          "name": "Get Chat Message",
+          "request": {
+            "name": "Get Chat Message",
+            "description": {
+              "content": "Retrieve a specific chat message",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chat",
+                "v1",
+                "sessions",
+                ":sessionId",
+                "messages",
+                ":messageId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) ID of the chat session linked to the chat message"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "messageId",
+                  "description": "(Required) ID of the chat message to retrieve"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b0acb6bd-9199-42f5-8968-4dd2e25b4f52",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "messages",
+                    ":messageId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) ID of the chat session linked to the chat message"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "messageId",
+                      "description": "(Required) ID of the chat message to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Chat message fetched successfully\",\n  \"data\": {\n    \"id\": \"662a54c06d0a0a1bd84ee19f\",\n    \"sessionId\": \"662a3f736d0a0a1bd84ee19a\",\n    \"companyId\": \"6629c6bb4733922ce5efc543\",\n    \"externalUserId\": \"06931013-9ae4-449d-87e8-4224508ba0d0\",\n    \"pluginIds\": [\n      \"plugin-1813954526\",\n      \"plugin-1813954526\"\n    ],\n    \"endpointId\": \"predefined-openai-gpt4o\",\n    \"responseMode\": \"sync\",\n    \"status\": \"completed\",\n    \"type\": \"text\",\n    \"media\": {},\n    \"query\": \"What is CircleCI. Also share latest news about Afghanistan?\",\n    \"answer\": \"CircleCI is a continuous integration and delivery platform that automates the build, test, and deploy process of software. It allows developers to rapidly release code by automating the build, test, and delivery process. It integrates with GitHub, Bitbucket, and other version control systems, allowing software teams to be more productive and focus on what matters: building great applications.\\nAs for the latest news about Afghanistan, several significant events have occurred. Two powerful earthquakes of magnitude 6.3 followed by several strong aftershocks in western Afghanistan resulted in the death of more than 2,000 people. The ruling government, run by the Taliban, has performed a double public execution of two convicted men at a stadium in southeastern Afghanistan. There's also the ongoing conflict with the Afghan resistance movement, which is struggling against the Taliban's military might. In sports news, New Zealand recently had a significant victory over Afghanistan in the Cricket World Cup.\",\n    \"createdBy\": \"6629c6bb4733922ce5efc544\",\n    \"createdAt\": \"2024-04-25T13:04:00.79Z\",\n    \"updatedAt\": \"2024-04-25T13:04:17.097Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b9db8b45-797f-402d-a5af-9d17d1e8442e",
+              "name": "Client-side error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "messages",
+                    ":messageId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) ID of the chat session linked to the chat message"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "messageId",
+                      "description": "(Required) ID of the chat message to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"invalid_request\",\n  \"message\": \"Invalid request parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "908a1db6-2cd3-491d-924c-6ff55bfe3e14",
+              "name": "Server-side Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "messages",
+                    ":messageId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) ID of the chat session linked to the chat message"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "messageId",
+                      "description": "(Required) ID of the chat message to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"server_error\",\n  \"message\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2965ff85-d9a9-4414-acde-0e7d4a93b3b7",
+          "name": "Get Chat Messages",
+          "request": {
+            "name": "Get Chat Messages",
+            "description": {
+              "content": "Retrieve messages of a specific chat session",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chat",
+                "v1",
+                "sessions",
+                ":sessionId",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "externalUserId",
+                  "value": "<string>",
+                  "description": "Filter the chat messages based on external user"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "desc",
+                  "description": "Sort order of the messages based on its creation time"
+                },
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "It acts as a pagination key and used to retrieve next results. For first iteration, this parameter must not be set. For subsequent iterations,  it must be set to `pagination.next` value from previous response."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Specifies the total number of results to retrieve. If the provided value is less than  the minimum allowed limit, it will be reset to the default value. Conversely, if the  provided value exceeds the maximum allowed limit, it will be reset to the maximum value."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) ID of the chat session"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4312e51e-94d5-4f74-ac16-d144643abae2",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "externalUserId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) ID of the chat session"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Chat messages fetched successfully\",\n  \"data\": [\n    {\n      \"id\": \"662a54c06d0a0a1bd84ee19f\",\n      \"sessionId\": \"662a3f736d0a0a1bd84ee19a\",\n      \"companyId\": \"6629c6bb4733922ce5efc543\",\n      \"externalUserId\": \"06931013-9ae4-449d-87e8-4224508ba0d0\",\n      \"pluginIds\": [\n        \"plugin-1813954526\",\n        \"plugin-1813954526\"\n      ],\n      \"endpointId\": \"predefined-openai-gpt4o\",\n      \"responseMode\": \"sync\",\n      \"status\": \"completed\",\n      \"type\": \"text\",\n      \"media\": {},\n      \"query\": \"What is CircleCI. Also share latest news about Afghanistan?\",\n      \"answer\": \"CircleCI is a continuous integration and delivery platform that automates the build, test, and deploy process of software. It allows developers to rapidly release code by automating the build, test, and delivery process. It integrates with GitHub, Bitbucket, and other version control systems, allowing software teams to be more productive and focus on what matters: building great applications.\\nAs for the latest news about Afghanistan, several significant events have occurred. Two powerful earthquakes of magnitude 6.3 followed by several strong aftershocks in western Afghanistan resulted in the death of more than 2,000 people. The ruling government, run by the Taliban, has performed a double public execution of two convicted men at a stadium in southeastern Afghanistan. There's also the ongoing conflict with the Afghan resistance movement, which is struggling against the Taliban's military might. In sports news, New Zealand recently had a significant victory over Afghanistan in the Cricket World Cup.\",\n      \"createdBy\": \"6629c6bb4733922ce5efc544\",\n      \"createdAt\": \"2024-04-25T13:04:00.79Z\",\n      \"updatedAt\": \"2024-04-25T13:04:17.097Z\"\n    },\n    {\n      \"id\": \"662a54c06d0a0a1bd84ee19f\",\n      \"sessionId\": \"662a3f736d0a0a1bd84ee19a\",\n      \"companyId\": \"6629c6bb4733922ce5efc543\",\n      \"externalUserId\": \"06931013-9ae4-449d-87e8-4224508ba0d0\",\n      \"pluginIds\": [\n        \"plugin-1813954526\",\n        \"plugin-1813954526\"\n      ],\n      \"endpointId\": \"predefined-openai-gpt4o\",\n      \"responseMode\": \"sync\",\n      \"status\": \"completed\",\n      \"type\": \"text\",\n      \"media\": {},\n      \"query\": \"What is CircleCI. Also share latest news about Afghanistan?\",\n      \"answer\": \"CircleCI is a continuous integration and delivery platform that automates the build, test, and deploy process of software. It allows developers to rapidly release code by automating the build, test, and delivery process. It integrates with GitHub, Bitbucket, and other version control systems, allowing software teams to be more productive and focus on what matters: building great applications.\\nAs for the latest news about Afghanistan, several significant events have occurred. Two powerful earthquakes of magnitude 6.3 followed by several strong aftershocks in western Afghanistan resulted in the death of more than 2,000 people. The ruling government, run by the Taliban, has performed a double public execution of two convicted men at a stadium in southeastern Afghanistan. There's also the ongoing conflict with the Afghan resistance movement, which is struggling against the Taliban's military might. In sports news, New Zealand recently had a significant victory over Afghanistan in the Cricket World Cup.\",\n      \"createdBy\": \"6629c6bb4733922ce5efc544\",\n      \"createdAt\": \"2024-04-25T13:04:00.79Z\",\n      \"updatedAt\": \"2024-04-25T13:04:17.097Z\"\n    }\n  ],\n  \"pagination\": {\n    \"next\": \"6629c6bb4733923ce5efc529\",\n    \"limit\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0f7953a9-f093-4364-b0cd-ed1a38dd2605",
+              "name": "Client-side error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "externalUserId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) ID of the chat session"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"invalid_request\",\n  \"message\": \"Invalid request parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9ab7e425-a409-4fa0-b22d-11db68dd1331",
+              "name": "Server-side Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "externalUserId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) ID of the chat session"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"server_error\",\n  \"message\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3b5117db-ee0d-4267-8b31-24044d65ba29",
+          "name": "Create Chat Batch",
+          "request": {
+            "name": "Create Chat Batch",
+            "description": {
+              "content": "Submit a batch of chat queries for asynchronous processing",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chat",
+                "v1",
+                "batches"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) Label or name for this batch"
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "(Required) JSONL file containing one chat query per line. See the  [sample batch template file](https://devpoc-f8fbhndjezesfcax.a03.azurefd.net/templates/batch-template.jsonl). The maximum allowed file size is **50MB**. The batch must not contain more than **1000** queries."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "28c835eb-c5bd-4d34-a742-48ab0c37000a",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "batches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Label or name for this batch",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) JSONL file containing one chat query per line. See the  [sample batch template file](https://devpoc-f8fbhndjezesfcax.a03.azurefd.net/templates/batch-template.jsonl). The maximum allowed file size is **50MB**. The batch must not contain more than **1000** queries.",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Chat batch created and is being processed\",\n  \"data\": {\n    \"batchId\": \"67e3e0766643f7771e78686e\",\n    \"status\": \"processing\",\n    \"totalQueries\": 2\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3ff30404-de30-4d0b-b2c8-972b8fa89fdb",
+              "name": "Client-side error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "batches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Label or name for this batch",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) JSONL file containing one chat query per line. See the  [sample batch template file](https://devpoc-f8fbhndjezesfcax.a03.azurefd.net/templates/batch-template.jsonl). The maximum allowed file size is **50MB**. The batch must not contain more than **1000** queries.",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"invalid_request\",\n  \"message\": \"Invalid request parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "696a86dc-9a70-4acc-ba24-a59dad1386fe",
+              "name": "Server-side Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "batches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Label or name for this batch",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) JSONL file containing one chat query per line. See the  [sample batch template file](https://devpoc-f8fbhndjezesfcax.a03.azurefd.net/templates/batch-template.jsonl). The maximum allowed file size is **50MB**. The batch must not contain more than **1000** queries.",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"server_error\",\n  \"message\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "75f3ef95-7cd0-4539-9a8c-19a03a87ff1e",
+          "name": "Get Chat Batches",
+          "request": {
+            "name": "Get Chat Batches",
+            "description": {
+              "content": "Retrieve chat batches",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chat",
+                "v1",
+                "batches"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Filter batches by status"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Filter batches by partial match on name (case-insensitive)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "desc",
+                  "description": "Sort order of the batches based on its creation time"
+                },
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "It acts as a pagination key and used to retrieve next results. For first iteration, this parameter must not be set. For subsequent iterations,  it must be set to `pagination.next` value from previous response."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Specifies the total number of results to retrieve. If the provided value is less than  the minimum allowed limit, it will be reset to the default value. Conversely, if the  provided value exceeds the maximum allowed limit, it will be reset to the maximum value."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "43ea9079-7eaa-445a-8745-01749b1a7e8e",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "batches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Chat batches fetched successfully\",\n  \"data\": [\n    {\n      \"id\": \"67e3e0766643f7771e78686e\",\n      \"companyId\": \"6629c6bb4733922ce5efc543\",\n      \"name\": \"Sample Batch\",\n      \"status\": \"completed\",\n      \"fileUrl\": \"https://example.com/batch-queries-eab6juvuwq8exlqjjhtl.jsonl\",\n      \"resultsFileUrl\": \"https://example.com/batch-results-eab6juvuwq8exlqjjhtl.jsonl\",\n      \"processingAt\": \"2025-03-26T11:20:12.915Z\",\n      \"completedAt\": \"2025-03-26T11:30:12.915Z\",\n      \"failedAt\": \"1964-10-25T05:22:25.913Z\",\n      \"requestMetrics\": {\n        \"total\": 500,\n        \"completed\": 490,\n        \"failed\": 10\n      },\n      \"metadata\": {},\n      \"createdBy\": \"6629c6bb4733922ce5efc544\",\n      \"createdAt\": \"2025-03-26T11:20:12.915Z\",\n      \"updatedAt\": \"2025-03-26T11:30:12.915Z\"\n    },\n    {\n      \"id\": \"67e3e0766643f7771e78686e\",\n      \"companyId\": \"6629c6bb4733922ce5efc543\",\n      \"name\": \"Sample Batch\",\n      \"status\": \"completed\",\n      \"fileUrl\": \"https://example.com/batch-queries-eab6juvuwq8exlqjjhtl.jsonl\",\n      \"resultsFileUrl\": \"https://example.com/batch-results-eab6juvuwq8exlqjjhtl.jsonl\",\n      \"processingAt\": \"2025-03-26T11:20:12.915Z\",\n      \"completedAt\": \"2025-03-26T11:30:12.915Z\",\n      \"failedAt\": \"1958-04-06T23:11:57.268Z\",\n      \"requestMetrics\": {\n        \"total\": 500,\n        \"completed\": 490,\n        \"failed\": 10\n      },\n      \"metadata\": {},\n      \"createdBy\": \"6629c6bb4733922ce5efc544\",\n      \"createdAt\": \"2025-03-26T11:20:12.915Z\",\n      \"updatedAt\": \"2025-03-26T11:30:12.915Z\"\n    }\n  ],\n  \"pagination\": {\n    \"next\": \"6629c6bb4733923ce5efc529\",\n    \"limit\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bae6657f-a2ae-455c-b950-056dc85df94d",
+              "name": "Client-side error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "batches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"invalid_request\",\n  \"message\": \"Invalid request parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7c40e712-dfb9-4d25-9ace-bc0602e0733a",
+              "name": "Server-side Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "batches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"server_error\",\n  \"message\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ada21d39-a50c-430c-aec9-a7875b7ce50f",
+          "name": "Get Chat Batch",
+          "request": {
+            "name": "Get Chat Batch",
+            "description": {
+              "content": "Retrieve a specific chat batch",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chat",
+                "v1",
+                "batches",
+                ":batchId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "batchId",
+                  "description": "(Required) ID of the chat batch to retrieve"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d2119855-a7e7-4784-b9c3-49770f7e11cf",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "batches",
+                    ":batchId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "batchId",
+                      "description": "(Required) ID of the chat batch to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Chat batch deleted successfully\",\n  \"data\": {\n    \"id\": \"67e3e0766643f7771e78686e\",\n    \"companyId\": \"6629c6bb4733922ce5efc543\",\n    \"name\": \"Sample Batch\",\n    \"status\": \"completed\",\n    \"fileUrl\": \"https://example.com/batch-queries-eab6juvuwq8exlqjjhtl.jsonl\",\n    \"resultsFileUrl\": \"https://example.com/batch-results-eab6juvuwq8exlqjjhtl.jsonl\",\n    \"processingAt\": \"2025-03-26T11:20:12.915Z\",\n    \"completedAt\": \"2025-03-26T11:30:12.915Z\",\n    \"failedAt\": \"2007-09-27T16:33:18.728Z\",\n    \"requestMetrics\": {\n      \"total\": 500,\n      \"completed\": 490,\n      \"failed\": 10\n    },\n    \"metadata\": {},\n    \"createdBy\": \"6629c6bb4733922ce5efc544\",\n    \"createdAt\": \"2025-03-26T11:20:12.915Z\",\n    \"updatedAt\": \"2025-03-26T11:30:12.915Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "362a2515-210b-4375-986b-319dadbef0d7",
+              "name": "Client-side error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "batches",
+                    ":batchId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "batchId",
+                      "description": "(Required) ID of the chat batch to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"invalid_request\",\n  \"message\": \"Invalid request parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f8e8fc54-a524-437a-8ff8-c14bb07ce0f9",
+              "name": "Server-side Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "batches",
+                    ":batchId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "batchId",
+                      "description": "(Required) ID of the chat batch to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"server_error\",\n  \"message\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0df47b08-6810-416d-9926-0f1f78683b51",
+          "name": "Delete Chat Batch",
+          "request": {
+            "name": "Delete Chat Batch",
+            "description": {
+              "content": "Delete a specific chat batch",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chat",
+                "v1",
+                "batches",
+                ":batchId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "batchId",
+                  "description": "(Required) ID of the chat batch to delete"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f49b7e88-3e56-4c78-89f6-6f8114e7aa81",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "batches",
+                    ":batchId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "batchId",
+                      "description": "(Required) ID of the chat batch to delete"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Chat batch deleted successfully\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "012050f3-d45e-46f2-b24a-5e5a4dbd7d86",
+              "name": "Client-side error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "batches",
+                    ":batchId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "batchId",
+                      "description": "(Required) ID of the chat batch to delete"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"invalid_request\",\n  \"message\": \"Invalid request parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c89aa245-c4cb-4bfa-94cc-0d965c21abfa",
+              "name": "Server-side Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "v1",
+                    "batches",
+                    ":batchId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "batchId",
+                      "description": "(Required) ID of the chat batch to delete"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"server_error\",\n  \"message\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.on-demand.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0541b2a8-14ec-4b7f-b0a8-5119d9d7d3b1",
+    "name": "OnDemand AI Chat API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OnDemand AI is a RAG-powered AI Platform-as-a-Service. This OpenAPI definition was assembled by the API Evangelist enrichment pipeline from the per-operation OpenAPI fragments published on the OnDemand AI ReadMe documentation (https://docs.on-demand.io/reference).",
+      "type": "text/plain"
+    }
+  }
+}
