@@ -36,6 +36,17 @@ image: https://files.readme.io/52eb008-favicon.ico
 tags:
 - Company
 - Artificial Intelligence
+- Machine-Learning
+- RAG
+- Agents
+- LLM
+- Platform-as-a-Service
+- Chat
+- Workflow-Automation
+- Vector Search
+tags_raw:
+- Company
+- Artificial Intelligence
 - Machine Learning
 - RAG
 - Agents
@@ -101,6 +112,8 @@ apis:
   humanURL: https://docs.on-demand.io
   baseURL: https://api.on-demand.io
   tags:
+  - Workflows
+  tags_raw:
   - Workflow
   properties:
   - type: OpenAPI
