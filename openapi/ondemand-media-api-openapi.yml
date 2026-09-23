@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: OnDemand AI Chat Media API
+  title: OnDemand AI Media API
   version: 1.0.0
   description: OnDemand AI is a RAG-powered AI Platform-as-a-Service. This OpenAPI definition was assembled by the API Evangelist enrichment pipeline from the per-operation OpenAPI fragments published on the OnDemand AI ReadMe documentation (https://docs.on-demand.io/reference).
 servers:
@@ -328,8 +328,9 @@ paths:
                         example: The conversation takes place between two individuals, John and Yumi. They are discussing the hot weather and the start of summer. John mentions that he is from London, where it rains a lot, and Yumi reveals that she is from Hokkaido, Japan, where it is colder even in the summer. They talk about their respective hometowns' weather and how they spend their summers. Yumi mentions taking her dog to the beach, while John talks about picnics in the park. They also discuss their interests, with Yumi expressing a desire to visit museums in London, and John mentioning the popularity of football games in his hometown.
                         description: context or transcript of the media content
                       extractedText:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                         example: null
                         description: extracted text from the media, if applicable
                       actionStatus:
@@ -337,8 +338,9 @@ paths:
                         example: completed
                         description: status of any actions performed on the media
                       failedReason:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                         example: null
                         description: reason for failure, if any
                       isDeleted:

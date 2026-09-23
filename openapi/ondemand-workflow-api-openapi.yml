@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: OnDemand AI Chat Workflow API
+  title: OnDemand AI Workflow API
   version: 1.0.0
   description: OnDemand AI is a RAG-powered AI Platform-as-a-Service. This OpenAPI definition was assembled by the API Evangelist enrichment pipeline from the per-operation OpenAPI fragments published on the OnDemand AI ReadMe documentation (https://docs.on-demand.io/reference).
 servers:
@@ -89,24 +89,6 @@ paths:
       - Workflow
 components:
   schemas:
-    WorkflowResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        isActive:
-          type: boolean
-        enableMemory:
-          type: boolean
-    Measured:
-      type: object
-      properties:
-        width:
-          type: integer
-        height:
-          type: integer
     CreateWorkflowRequest:
       type: object
       required:
@@ -149,28 +131,6 @@ components:
           type: array
           items:
             type: string
-    Node:
-      type: object
-      required:
-      - key
-      - type
-      - kind
-      properties:
-        key:
-          type: string
-        type:
-          type: string
-          enum:
-          - llm
-          - inputText
-          - advancedVoiceMode
-          - o_analyzer
-        kind:
-          type: string
-          enum:
-          - source
-          - intermediate
-          - sink
     UpdateWorkflowRequest:
       type: object
       required:
@@ -193,6 +153,31 @@ components:
             $ref: '#/components/schemas/Delivery'
         enableMemory:
           type: boolean
+    WorkflowResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        isActive:
+          type: boolean
+        enableMemory:
+          type: boolean
+    NodePosition:
+      type: object
+      properties:
+        x:
+          type: integer
+        y:
+          type: integer
+    Measured:
+      type: object
+      properties:
+        width:
+          type: integer
+        height:
+          type: integer
     Delivery:
       type: object
       properties:
@@ -202,13 +187,28 @@ components:
           - webhook
           - phone
           - email
-    NodePosition:
+    Node:
       type: object
+      required:
+      - key
+      - type
+      - kind
       properties:
-        x:
-          type: integer
-        y:
-          type: integer
+        key:
+          type: string
+        type:
+          type: string
+          enum:
+          - llm
+          - inputText
+          - advancedVoiceMode
+          - o_analyzer
+        kind:
+          type: string
+          enum:
+          - source
+          - intermediate
+          - sink
   securitySchemes:
     apikey:
       type: apiKey

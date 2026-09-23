@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: OnDemand AI Chat API
   version: 1.0.0
@@ -636,6 +636,17 @@ paths:
       - Chat
 components:
   schemas:
+    ServerErrorResponse:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          description: Application-specific error code
+          example: server_error
+        message:
+          type: string
+          description: Human-readable error message
+          example: Internal server error
     ChatMessage:
       type: object
       properties:
@@ -742,28 +753,6 @@ components:
           type: string
           example: '2024-04-25T13:04:17.097Z'
           description: Timestamp when the chat message was last updated
-    ServerErrorResponse:
-      type: object
-      properties:
-        errorCode:
-          type: string
-          description: Application-specific error code
-          example: server_error
-        message:
-          type: string
-          description: Human-readable error message
-          example: Internal server error
-    ClientErrorResponse:
-      type: object
-      properties:
-        errorCode:
-          type: string
-          description: Application-specific error code
-          example: invalid_request
-        message:
-          type: string
-          description: Human-readable error message
-          example: Invalid request parameters
     ChatSession:
       type: object
       properties:
@@ -802,6 +791,28 @@ components:
           type: string
           example: '2024-04-25T07:47:08.201467477Z'
           description: Timestamp when the chat session was last updated
+    Pagination:
+      type: object
+      properties:
+        next:
+          type: string
+          example: 6629c6bb4733923ce5efc529
+          description: The cursor for fetching the next set of results. If there are no more results available, this field  will be an empty string. When there are more results available, this field must be set to the value  of the `cursor` query parameter in the subsequent request to retrieve those results.
+        limit:
+          type: integer
+          example: 10
+          description: Limit set for the current request
+    ClientErrorResponse:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          description: Application-specific error code
+          example: invalid_request
+        message:
+          type: string
+          description: Human-readable error message
+          example: Invalid request parameters
     ChatBatch:
       type: object
       properties:
@@ -846,9 +857,10 @@ components:
           example: '2025-03-26T11:30:12.915Z'
           description: Timestamp when the batch processing completed. Only present if status is `completed`
         failedAt:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
           description: Timestamp when the batch processing failed. Only present if status is `failed`
         requestMetrics:
           type: object
@@ -866,8 +878,9 @@ components:
               example: 10
               description: Number of queries that failed during processing
         metadata:
-          type: object
-          nullable: true
+          type:
+          - object
+          - 'null'
         createdBy:
           type: string
           example: 6629c6bb4733922ce5efc544
@@ -882,17 +895,6 @@ components:
           format: date-time
           example: '2025-03-26T11:30:12.915Z'
           description: Timestamp when the chat batch was last updated
-    Pagination:
-      type: object
-      properties:
-        next:
-          type: string
-          example: 6629c6bb4733923ce5efc529
-          description: The cursor for fetching the next set of results. If there are no more results available, this field  will be an empty string. When there are more results available, this field must be set to the value  of the `cursor` query parameter in the subsequent request to retrieve those results.
-        limit:
-          type: integer
-          example: 10
-          description: Limit set for the current request
   securitySchemes:
     apikey:
       type: apiKey

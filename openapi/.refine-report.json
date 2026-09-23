@@ -1,12 +1,7 @@
 {
   "provider": "ondemand",
   "sources": [
-    "ondemand-chat-api-openapi.yml",
-    "ondemand-config-api-openapi.yml",
-    "ondemand-execute-api-openapi.yml",
-    "ondemand-media-api-openapi.yml",
-    "ondemand-user-api-openapi.yml",
-    "ondemand-workflow-api-openapi.yml"
+    "_original/ondemand-openapi.json"
   ],
   "outputs": [
     "ondemand-chat-api-openapi.yml",
@@ -19,6 +14,45 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "ondemand-openapi.json: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "ondemand-openapi.json: tagged paths GET /media/v1/public/file -> Media",
+    "ondemand-openapi.json: tagged paths POST /media/v1/public/file -> Media",
+    "ondemand-openapi.json: tagged paths DELETE /media/v1/public/file/{fileId} -> Media",
+    "ondemand-openapi.json: tagged paths POST /chat/v1/sessions -> Chat",
+    "ondemand-openapi.json: tagged paths GET /chat/v1/sessions -> Chat",
+    "ondemand-openapi.json: tagged paths POST /chat/v1/sessions/{sessionId}/query -> Chat",
+    "ondemand-openapi.json: tagged paths GET /chat/v1/sessions/{sessionId} -> Chat",
+    "ondemand-openapi.json: tagged paths GET /chat/v1/sessions/{sessionId}/messages/{messageId} -> Chat",
+    "ondemand-openapi.json: tagged paths GET /chat/v1/sessions/{sessionId}/messages -> Chat",
+    "ondemand-openapi.json: tagged paths POST /chat/v1/batches -> Chat",
+    "ondemand-openapi.json: tagged paths GET /chat/v1/batches -> Chat",
+    "ondemand-openapi.json: tagged paths GET /chat/v1/batches/{batchId} -> Chat",
+    "ondemand-openapi.json: tagged paths DELETE /chat/v1/batches/{batchId} -> Chat",
+    "ondemand-openapi.json: tagged paths POST /execute/speech_to_text -> Execute",
+    "ondemand-openapi.json: tagged paths POST /execute/text_to_speech -> Execute",
+    "ondemand-openapi.json: tagged paths POST /execute/language_translation -> Execute",
+    "ondemand-openapi.json: tagged paths POST /config/v1/public/mqtt_user -> Config",
+    "ondemand-openapi.json: tagged paths DELETE /config/v1/public/mqtt_user/{userId} -> Config",
+    "ondemand-openapi.json: tagged paths POST /user/v1/public/user/apiKey/create -> User",
+    "ondemand-openapi.json: tagged paths DELETE /user/v1/public/user/apiKey/revoke/{apiKeyId} -> User",
+    "ondemand-openapi.json: tagged paths POST /workflow -> Workflow",
+    "ondemand-openapi.json: tagged paths PATCH /workflow/{id} -> Workflow",
+    "ondemand-openapi.json: declared missing tag: Chat",
+    "ondemand-openapi.json: declared missing tag: Config",
+    "ondemand-openapi.json: declared missing tag: Execute",
+    "ondemand-openapi.json: declared missing tag: Media",
+    "ondemand-openapi.json: declared missing tag: User",
+    "ondemand-openapi.json: declared missing tag: Workflow",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "ondemand-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ondemand-config-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ondemand-execute-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ondemand-media-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ondemand-user-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ondemand-workflow-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
