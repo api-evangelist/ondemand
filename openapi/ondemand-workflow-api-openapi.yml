@@ -89,48 +89,17 @@ paths:
       - Workflow
 components:
   schemas:
-    CreateWorkflowRequest:
+    WorkflowResponse:
       type: object
-      required:
-      - name
-      - trigger
-      - nodes
-      - delivery
       properties:
+        id:
+          type: string
         name:
           type: string
-        trigger:
-          $ref: '#/components/schemas/Trigger'
-        nodes:
-          type: array
-          items:
-            $ref: '#/components/schemas/Node'
-        delivery:
-          type: array
-          items:
-            $ref: '#/components/schemas/Delivery'
+        isActive:
+          type: boolean
         enableMemory:
           type: boolean
-    Trigger:
-      type: object
-      required:
-      - type
-      - position
-      properties:
-        type:
-          type: string
-          enum:
-          - api
-          - cron
-          - webhook
-        position:
-          $ref: '#/components/schemas/NodePosition'
-        measured:
-          $ref: '#/components/schemas/Measured'
-        nextNodeKeys:
-          type: array
-          items:
-            type: string
     UpdateWorkflowRequest:
       type: object
       required:
@@ -153,31 +122,6 @@ components:
             $ref: '#/components/schemas/Delivery'
         enableMemory:
           type: boolean
-    WorkflowResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        isActive:
-          type: boolean
-        enableMemory:
-          type: boolean
-    NodePosition:
-      type: object
-      properties:
-        x:
-          type: integer
-        y:
-          type: integer
-    Measured:
-      type: object
-      properties:
-        width:
-          type: integer
-        height:
-          type: integer
     Delivery:
       type: object
       properties:
@@ -187,6 +131,62 @@ components:
           - webhook
           - phone
           - email
+    CreateWorkflowRequest:
+      type: object
+      required:
+      - name
+      - trigger
+      - nodes
+      - delivery
+      properties:
+        name:
+          type: string
+        trigger:
+          $ref: '#/components/schemas/Trigger'
+        nodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Node'
+        delivery:
+          type: array
+          items:
+            $ref: '#/components/schemas/Delivery'
+        enableMemory:
+          type: boolean
+    NodePosition:
+      type: object
+      properties:
+        x:
+          type: integer
+        y:
+          type: integer
+    Trigger:
+      type: object
+      required:
+      - type
+      - position
+      properties:
+        type:
+          type: string
+          enum:
+          - api
+          - cron
+          - webhook
+        position:
+          $ref: '#/components/schemas/NodePosition'
+        measured:
+          $ref: '#/components/schemas/Measured'
+        nextNodeKeys:
+          type: array
+          items:
+            type: string
+    Measured:
+      type: object
+      properties:
+        width:
+          type: integer
+        height:
+          type: integer
     Node:
       type: object
       required:

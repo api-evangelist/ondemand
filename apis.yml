@@ -50,13 +50,13 @@ image: https://files.readme.io/52eb008-favicon.ico
 tags:
 - Company
 - Artificial Intelligence
-- Machine-Learning
+- Machine Learning
 - RAG
 - Agents
 - LLM
 - Platform-as-a-Service
 - Chat
-- Workflow-Automation
+- Workflow Automation
 - Vector Search
 tags_raw:
 - Company
@@ -69,6 +69,8 @@ tags_raw:
 - Chat
 - Workflow Automation
 - Vector Search
+- Machine-Learning
+- Workflow-Automation
 apis:
 - aid: ondemand:ondemand-chat-api
   name: Ondemand Chat API
