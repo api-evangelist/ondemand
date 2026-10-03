@@ -89,48 +89,6 @@ paths:
       - Workflow
 components:
   schemas:
-    WorkflowResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        isActive:
-          type: boolean
-        enableMemory:
-          type: boolean
-    UpdateWorkflowRequest:
-      type: object
-      required:
-      - trigger
-      - nodes
-      - delivery
-      properties:
-        name:
-          type: string
-          description: Workflow name
-        trigger:
-          $ref: '#/components/schemas/Trigger'
-        nodes:
-          type: array
-          items:
-            $ref: '#/components/schemas/Node'
-        delivery:
-          type: array
-          items:
-            $ref: '#/components/schemas/Delivery'
-        enableMemory:
-          type: boolean
-    Delivery:
-      type: object
-      properties:
-        channel:
-          type: string
-          enum:
-          - webhook
-          - phone
-          - email
     CreateWorkflowRequest:
       type: object
       required:
@@ -153,12 +111,12 @@ components:
             $ref: '#/components/schemas/Delivery'
         enableMemory:
           type: boolean
-    NodePosition:
+    Measured:
       type: object
       properties:
-        x:
+        width:
           type: integer
-        y:
+        height:
           type: integer
     Trigger:
       type: object
@@ -180,13 +138,6 @@ components:
           type: array
           items:
             type: string
-    Measured:
-      type: object
-      properties:
-        width:
-          type: integer
-        height:
-          type: integer
     Node:
       type: object
       required:
@@ -209,6 +160,55 @@ components:
           - source
           - intermediate
           - sink
+    UpdateWorkflowRequest:
+      type: object
+      required:
+      - trigger
+      - nodes
+      - delivery
+      properties:
+        name:
+          type: string
+          description: Workflow name
+        trigger:
+          $ref: '#/components/schemas/Trigger'
+        nodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Node'
+        delivery:
+          type: array
+          items:
+            $ref: '#/components/schemas/Delivery'
+        enableMemory:
+          type: boolean
+    NodePosition:
+      type: object
+      properties:
+        x:
+          type: integer
+        y:
+          type: integer
+    Delivery:
+      type: object
+      properties:
+        channel:
+          type: string
+          enum:
+          - webhook
+          - phone
+          - email
+    WorkflowResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        isActive:
+          type: boolean
+        enableMemory:
+          type: boolean
   securitySchemes:
     apikey:
       type: apiKey
