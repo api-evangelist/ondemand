@@ -89,34 +89,12 @@ paths:
       - Workflow
 components:
   schemas:
-    CreateWorkflowRequest:
-      type: object
-      required:
-      - name
-      - trigger
-      - nodes
-      - delivery
-      properties:
-        name:
-          type: string
-        trigger:
-          $ref: '#/components/schemas/Trigger'
-        nodes:
-          type: array
-          items:
-            $ref: '#/components/schemas/Node'
-        delivery:
-          type: array
-          items:
-            $ref: '#/components/schemas/Delivery'
-        enableMemory:
-          type: boolean
-    Measured:
+    NodePosition:
       type: object
       properties:
-        width:
+        x:
           type: integer
-        height:
+        y:
           type: integer
     Trigger:
       type: object
@@ -160,6 +138,37 @@ components:
           - source
           - intermediate
           - sink
+    Delivery:
+      type: object
+      properties:
+        channel:
+          type: string
+          enum:
+          - webhook
+          - phone
+          - email
+    CreateWorkflowRequest:
+      type: object
+      required:
+      - name
+      - trigger
+      - nodes
+      - delivery
+      properties:
+        name:
+          type: string
+        trigger:
+          $ref: '#/components/schemas/Trigger'
+        nodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Node'
+        delivery:
+          type: array
+          items:
+            $ref: '#/components/schemas/Delivery'
+        enableMemory:
+          type: boolean
     UpdateWorkflowRequest:
       type: object
       required:
@@ -182,22 +191,13 @@ components:
             $ref: '#/components/schemas/Delivery'
         enableMemory:
           type: boolean
-    NodePosition:
+    Measured:
       type: object
       properties:
-        x:
+        width:
           type: integer
-        y:
+        height:
           type: integer
-    Delivery:
-      type: object
-      properties:
-        channel:
-          type: string
-          enum:
-          - webhook
-          - phone
-          - email
     WorkflowResponse:
       type: object
       properties:

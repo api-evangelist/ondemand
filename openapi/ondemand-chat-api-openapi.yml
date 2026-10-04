@@ -636,88 +636,6 @@ paths:
       - Chat
 components:
   schemas:
-    ChatBatch:
-      type: object
-      properties:
-        id:
-          type: string
-          example: 67e3e0766643f7771e78686e
-          description: ID of the chat batch
-        companyId:
-          type: string
-          example: 6629c6bb4733922ce5efc543
-          description: ID of the company linked to batch
-        name:
-          type: string
-          example: Sample Batch
-          description: Label or name for this batch
-        status:
-          type: string
-          enum:
-          - processing
-          - completed
-          - failed
-          example: completed
-          description: Current status of the batch
-        fileUrl:
-          type: string
-          format: uri
-          example: https://example.com/batch-queries-eab6juvuwq8exlqjjhtl.jsonl
-          description: URL to download the batch file containing queries
-        resultsFileUrl:
-          type: string
-          format: uri
-          example: https://example.com/batch-results-eab6juvuwq8exlqjjhtl.jsonl
-          description: URL to download the results file containing processed queries
-        processingAt:
-          type: string
-          format: date-time
-          example: '2025-03-26T11:20:12.915Z'
-          description: Timestamp when the batch processing started
-        completedAt:
-          type: string
-          format: date-time
-          example: '2025-03-26T11:30:12.915Z'
-          description: Timestamp when the batch processing completed. Only present if status is `completed`
-        failedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: Timestamp when the batch processing failed. Only present if status is `failed`
-        requestMetrics:
-          type: object
-          properties:
-            total:
-              type: integer
-              example: 500
-              description: Total number of queries in the batch
-            completed:
-              type: integer
-              example: 490
-              description: Number of queries successfully processed
-            failed:
-              type: integer
-              example: 10
-              description: Number of queries that failed during processing
-        metadata:
-          type:
-          - object
-          - 'null'
-        createdBy:
-          type: string
-          example: 6629c6bb4733922ce5efc544
-          description: ID of the company user created the chat batch
-        createdAt:
-          type: string
-          format: date-time
-          example: '2025-03-26T11:20:12.915Z'
-          description: Timestamp when the chat batch was created
-        updatedAt:
-          type: string
-          format: date-time
-          example: '2025-03-26T11:30:12.915Z'
-          description: Timestamp when the chat batch was last updated
     ServerErrorResponse:
       type: object
       properties:
@@ -729,6 +647,17 @@ components:
           type: string
           description: Human-readable error message
           example: Internal server error
+    Pagination:
+      type: object
+      properties:
+        next:
+          type: string
+          example: 6629c6bb4733923ce5efc529
+          description: The cursor for fetching the next set of results. If there are no more results available, this field  will be an empty string. When there are more results available, this field must be set to the value  of the `cursor` query parameter in the subsequent request to retrieve those results.
+        limit:
+          type: integer
+          example: 10
+          description: Limit set for the current request
     ChatMessage:
       type: object
       properties:
@@ -835,6 +764,17 @@ components:
           type: string
           example: '2024-04-25T13:04:17.097Z'
           description: Timestamp when the chat message was last updated
+    ClientErrorResponse:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          description: Application-specific error code
+          example: invalid_request
+        message:
+          type: string
+          description: Human-readable error message
+          example: Invalid request parameters
     ChatSession:
       type: object
       properties:
@@ -873,28 +813,88 @@ components:
           type: string
           example: '2024-04-25T07:47:08.201467477Z'
           description: Timestamp when the chat session was last updated
-    ClientErrorResponse:
+    ChatBatch:
       type: object
       properties:
-        errorCode:
+        id:
           type: string
-          description: Application-specific error code
-          example: invalid_request
-        message:
+          example: 67e3e0766643f7771e78686e
+          description: ID of the chat batch
+        companyId:
           type: string
-          description: Human-readable error message
-          example: Invalid request parameters
-    Pagination:
-      type: object
-      properties:
-        next:
+          example: 6629c6bb4733922ce5efc543
+          description: ID of the company linked to batch
+        name:
           type: string
-          example: 6629c6bb4733923ce5efc529
-          description: The cursor for fetching the next set of results. If there are no more results available, this field  will be an empty string. When there are more results available, this field must be set to the value  of the `cursor` query parameter in the subsequent request to retrieve those results.
-        limit:
-          type: integer
-          example: 10
-          description: Limit set for the current request
+          example: Sample Batch
+          description: Label or name for this batch
+        status:
+          type: string
+          enum:
+          - processing
+          - completed
+          - failed
+          example: completed
+          description: Current status of the batch
+        fileUrl:
+          type: string
+          format: uri
+          example: https://example.com/batch-queries-eab6juvuwq8exlqjjhtl.jsonl
+          description: URL to download the batch file containing queries
+        resultsFileUrl:
+          type: string
+          format: uri
+          example: https://example.com/batch-results-eab6juvuwq8exlqjjhtl.jsonl
+          description: URL to download the results file containing processed queries
+        processingAt:
+          type: string
+          format: date-time
+          example: '2025-03-26T11:20:12.915Z'
+          description: Timestamp when the batch processing started
+        completedAt:
+          type: string
+          format: date-time
+          example: '2025-03-26T11:30:12.915Z'
+          description: Timestamp when the batch processing completed. Only present if status is `completed`
+        failedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: Timestamp when the batch processing failed. Only present if status is `failed`
+        requestMetrics:
+          type: object
+          properties:
+            total:
+              type: integer
+              example: 500
+              description: Total number of queries in the batch
+            completed:
+              type: integer
+              example: 490
+              description: Number of queries successfully processed
+            failed:
+              type: integer
+              example: 10
+              description: Number of queries that failed during processing
+        metadata:
+          type:
+          - object
+          - 'null'
+        createdBy:
+          type: string
+          example: 6629c6bb4733922ce5efc544
+          description: ID of the company user created the chat batch
+        createdAt:
+          type: string
+          format: date-time
+          example: '2025-03-26T11:20:12.915Z'
+          description: Timestamp when the chat batch was created
+        updatedAt:
+          type: string
+          format: date-time
+          example: '2025-03-26T11:30:12.915Z'
+          description: Timestamp when the chat batch was last updated
   securitySchemes:
     apikey:
       type: apiKey
