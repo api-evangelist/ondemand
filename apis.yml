@@ -45,7 +45,7 @@ accessModel:
   method: derived
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-10-06'
 image: https://files.readme.io/52eb008-favicon.ico
 tags:
 - Company
@@ -140,6 +140,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://blog.on-demand.io/rss/
+  type: BlogRSS
 - type: Website
   url: https://www.on-demand.io/
 - type: AgenticAccess
