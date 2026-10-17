@@ -89,64 +89,6 @@ paths:
       - Workflow
 components:
   schemas:
-    NodePosition:
-      type: object
-      properties:
-        x:
-          type: integer
-        y:
-          type: integer
-    Trigger:
-      type: object
-      required:
-      - type
-      - position
-      properties:
-        type:
-          type: string
-          enum:
-          - api
-          - cron
-          - webhook
-        position:
-          $ref: '#/components/schemas/NodePosition'
-        measured:
-          $ref: '#/components/schemas/Measured'
-        nextNodeKeys:
-          type: array
-          items:
-            type: string
-    Node:
-      type: object
-      required:
-      - key
-      - type
-      - kind
-      properties:
-        key:
-          type: string
-        type:
-          type: string
-          enum:
-          - llm
-          - inputText
-          - advancedVoiceMode
-          - o_analyzer
-        kind:
-          type: string
-          enum:
-          - source
-          - intermediate
-          - sink
-    Delivery:
-      type: object
-      properties:
-        channel:
-          type: string
-          enum:
-          - webhook
-          - phone
-          - email
     CreateWorkflowRequest:
       type: object
       required:
@@ -169,6 +111,28 @@ components:
             $ref: '#/components/schemas/Delivery'
         enableMemory:
           type: boolean
+    Node:
+      type: object
+      required:
+      - key
+      - type
+      - kind
+      properties:
+        key:
+          type: string
+        type:
+          type: string
+          enum:
+          - llm
+          - inputText
+          - advancedVoiceMode
+          - o_analyzer
+        kind:
+          type: string
+          enum:
+          - source
+          - intermediate
+          - sink
     UpdateWorkflowRequest:
       type: object
       required:
@@ -191,13 +155,35 @@ components:
             $ref: '#/components/schemas/Delivery'
         enableMemory:
           type: boolean
-    Measured:
+    Delivery:
       type: object
       properties:
-        width:
-          type: integer
-        height:
-          type: integer
+        channel:
+          type: string
+          enum:
+          - webhook
+          - phone
+          - email
+    Trigger:
+      type: object
+      required:
+      - type
+      - position
+      properties:
+        type:
+          type: string
+          enum:
+          - api
+          - cron
+          - webhook
+        position:
+          $ref: '#/components/schemas/NodePosition'
+        measured:
+          $ref: '#/components/schemas/Measured'
+        nextNodeKeys:
+          type: array
+          items:
+            type: string
     WorkflowResponse:
       type: object
       properties:
@@ -209,6 +195,20 @@ components:
           type: boolean
         enableMemory:
           type: boolean
+    Measured:
+      type: object
+      properties:
+        width:
+          type: integer
+        height:
+          type: integer
+    NodePosition:
+      type: object
+      properties:
+        x:
+          type: integer
+        y:
+          type: integer
   securitySchemes:
     apikey:
       type: apiKey
